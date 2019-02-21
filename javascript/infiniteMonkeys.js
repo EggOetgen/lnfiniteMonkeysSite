@@ -19,7 +19,7 @@ $(document).ready(function() {
 
    $("#exit").html("X");
 
-  $("#mainImg").html('<img src="images/shell2.JPG" alt="HTML5 Icon" class= "mainBoxImg" >');
+  $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
   };
 
   var showHome = function() {

@@ -177,69 +177,68 @@ uniform float u_time;
         var uniforms;
 	var currMouseX = 0, currMouseY = 0, prevMouseX = 0, prevMouseY = 0;
 	    
-            init();
+        init();
         animate();
 	
         function init() {
             container = document.getElementById( 'container' );
-
-              camera = new THREE.Camera();
-              camera.position.z = 1;
-
-              scene = new THREE.Scene();
-
-              var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
-	      var accumTime = 0;
-	      
-              uniforms = {
+	    
+            camera = new THREE.Camera();
+            camera.position.z = 1;
+	    
+            scene = new THREE.Scene();
+	    
+            var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+	    var accumTime = 0;
+	    
+            uniforms = {
                   u_time: { type: "f", value: 1.0 },
                   u_resolution: { type: "v2", value: new THREE.Vector2() },
                   u_mouse: { type: "v2", value: new THREE.Vector2() }
               };
-
-              var material = new THREE.ShaderMaterial( {
+	    
+            var material = new THREE.ShaderMaterial( {
                   uniforms: uniforms,
                   vertexShader: document.getElementById( 'vertexShader' ).textContent,
                   fragmentShader: document.getElementById( 'fragmentShader' ).textContent
               } );
-
-              var mesh = new THREE.Mesh( geometry, material );
-              scene.add( mesh );
-
-              renderer = new THREE.WebGLRenderer();
-              renderer.setPixelRatio( window.devicePixelRatio );
-
-              container.appendChild( renderer.domElement );
-
-              onWindowResize();
-              window.addEventListener( 'resize', onWindowResize, false );
-
-              document.onmousemove = function(e){
-		  currMouseX = e.pageX / window.innerWidth;
-		  currMouseY = e.pageY / window.innerHeight;
-		  	  
-                  uniforms.u_mouse.value.x = newMouseX;
-                  uniforms.u_mouse.value.y = newMouseY;
-              }
-          }
-
+	    
+            var mesh = new THREE.Mesh( geometry, material );
+            scene.add( mesh );
+	    
+            renderer = new THREE.WebGLRenderer();
+            renderer.setPixelRatio( Math.min(1.0, window.devicePixelRatio) );
+            container.appendChild( renderer.domElement );
+	    
+            onWindowResize();
+            window.addEventListener( 'resize', onWindowResize, false );
+	    
+            document.onmousemove = function(e){
+		currMouseX = e.pageX / window.innerWidth;
+		currMouseY = e.pageY / window.innerHeight;
+		
+                uniforms.u_mouse.value.x = currMouseX;
+                uniforms.u_mouse.value.y = currMouseX;
+            }
+        }
+	
         function onWindowResize( event ) {	    
-              renderer.setSize( window.innerWidth, window.innerHeight );
-              uniforms.u_resolution.value.x = renderer.domElement.width;
-              uniforms.u_resolution.value.y = renderer.domElement.height;
-          }
-
-          function animate() {
-              requestAnimationFrame( animate );
-              render();
-          }
-
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            uniforms.u_resolution.value.x = renderer.domElement.width;
+            uniforms.u_resolution.value.y = renderer.domElement.height;
+        }
+	
+        function animate() {
+            requestAnimationFrame( animate );
+            render();
+        }
+	
         function render() {
 	    let mouseDelta = 1.9*(Math.abs(currMouseX - prevMouseX) + Math.abs(currMouseY - prevMouseY));
-	    let timeIncr = 0.09;
+	    let timeIncr = 0.05;
             uniforms.u_time.value += timeIncr + mouseDelta;
             renderer.render( scene, camera );
-
+	    
 	    prevMouseX = currMouseX;
 	    prevMouseY = currMouseY;
         }

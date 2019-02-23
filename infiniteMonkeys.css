@@ -24,7 +24,10 @@ background-color:#8EEEFF00;
     border-color: #08090A;
 /* letter-spacing: 1px; */
 }
-
+ #img2{
+	 /* visibility: hidden; */
+	 /* display: none; */
+ }
 
 canvas {
 position:absolute;
@@ -47,7 +50,7 @@ z-index:-1;
 	position: fixed;
 	/*border-right: 2px solid;*/
   /* background-color:#F4F7F5; */
-	background-color:#8EEEFFA6 ;
+	background-color:#E8E8E8A6 ;
 	/* border: 5px solid ; */
 	overflow: scroll;
 }
@@ -144,10 +147,10 @@ a.projLink:visited {
 
 .project:hover  a.projLink {
     text-decoration: none;
-			background-color: #FF160096;
+			background-color: #F5F400D9;
 			/* background-color: red; */
     /*color: #737373;*/
-   color: #3C594E;
+   color: #08090A;
 	 visibility: visible;
 }
 .projLink{
@@ -225,7 +228,7 @@ a:active {
 	/* margin: 0% 2.5% 5% 2.5%; */
 	float:left;
 	background-size: cover;
-	 background-color: rgba(255, 255, 255, 0.3);
+	 background-color: rgba(255, 255, 255, 0.0);
 	  background-blend-mode: lighten;
 	/* border: 1px solid; */
 	/* height: auto; */
@@ -233,7 +236,7 @@ a:active {
 }
 
 .project:hover{
-	 background-color: rgba(255, 255, 255, 0.0);
+	 background-color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -252,7 +255,7 @@ a:active {
 
 }
 #project4  {
-	background-image: url("images/temp.png");
+	background-image: url("images/printedShells.jpg");
 
 }
 #project5	  {

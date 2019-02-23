@@ -2,28 +2,47 @@ $(document).ready(function() {
 
 
   document.getElementById("bio").innerHTML = "Hello, World!";
-  // Get the modal
-  var modal = document.getElementById('myModal');
+  //
+  // // // Get the modal
+  // // var modal = document.getElementById('myModal');
+  //
+  // // Get the image and insert it inside the modal - use its "alt" text as a caption
+  //
+  // var modalImg = document.getElementById("img01");
+  // var img = document.getElementById("mainImg");
+  // var captionText = document.getElementById("caption");
+  //
+  // img.onclick = function(){
+  //   modal.style.display = "block";
+  //   modalImg.src = this.src;
+  //   captionText.innerHTML = this.alt;
+  // }
+  //
+  // // Get the <span> element that closes the modal
+  // var span = document.getElementsByClassName("close")[0];
+  //
+  // // When the user clicks on <span> (x), close the modal
+  // span.onclick = function() {
+  //   modal.style.display = "none";
+  // }
 
-  // Get the image and insert it inside the modal - use its "alt" text as a caption
+var modal = function(){
 
-  var modalImg = document.getElementById("img01");
-  var img = document.getElementById("mainImg");
-  var captionText = document.getElementById("caption");
+$("#img01").html($("#mainImg").html());
 
-  img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  }
+$(".modal").css("display", "block");
+console.log("test");
 
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+}
+var closeModal = function(){
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+// $("#img01").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg" >');
+
+$(".modal").css("display", "none");
+console.log("test");
+
+}
+
   var MyBlah = function($blah) {
 
      $("#bio").html("This is some example text about project number one! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
@@ -36,6 +55,7 @@ $(document).ready(function() {
 
   var setProject1 = function($blah) {
 showOneImg();
+// $(".modal").css("display", "block");
     $("#exit").css("color", "#08090A");
 
     $("#title").html($blah);
@@ -101,19 +121,19 @@ var hideImg = function() {
   $("#mainImg").hide();
   $("#img2").hide();
 
-}
+};
 
 var showImg = function() {
   $("#mainImg").show();
   $("#img2").show();
 
-}
+};
 
 var showOneImg = function() {
   $("#mainImg").show();
   $("#img2").hide();
 
-}
+};
   var showHome = function() {
     // var newTitle =
     $("img2").css("display", "none");
@@ -122,6 +142,7 @@ var showOneImg = function() {
     // $("#exit").css("color", "#F4F7F5");
     hideImg();
      $("#exit").html("-");
+
        // $("#img2").hide();
   };
 
@@ -132,4 +153,6 @@ var showOneImg = function() {
       $('#project4').click(function(){ setProject4("Project Four"); return false; });
       $('#project5').click(function(){ setTitle("Project Five"); return false; });
       $('#project6').click(function(){ setTitle("Project Six"); return false; });
+      $('#mainImg').click(function(){  modal(); return false; });
+       $('.close').click(function(){ closeModal(); return false; });
 });

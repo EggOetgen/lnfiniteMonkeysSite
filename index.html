@@ -3,9 +3,10 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
   <script src="javascript/jquery-3.3.1.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet"> -->
   <script src="javascript/infiniteMonkeys.js"></script>
 
+  <link href="https://fonts.googleapis.com/css?family=Hind|Hind+Siliguri|Muli|Noto+Sans|Open+Sans|Roboto|Roboto+Condensed" rel="stylesheet">
 	<link href="infiniteMonkeys.css" rel="stylesheet" type="text/css" />
 <title>Infinite Monkeys</title>
 </head>
@@ -20,7 +21,309 @@
           }
       </script>
       <script id="fragmentShader" type="x-shader/x-fragment">
-         // Author:
+      //
+      // //#version 150
+      //
+      // //GLSL Fragment Shader that calculates and displays the graphics.
+      //
+      // //Higher precision for more accurate calculations
+      // #ifdef GL_ES
+      // precision highp float;
+      // #endif
+      //
+      // //PI constant
+      // #define PI 3.14159265359;
+      //
+      // uniform vec2 u_resolution;
+      // uniform vec2 u_mouse;
+      // uniform float u_time;
+      //
+      // #define SPEED 0.3
+      // //GLSL Noise functions, Patricio Gonzalez Vivo's GitHub
+      // //https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
+      // //--------------------------------------------------------------
+      // float rand(vec2 n) {
+      // 	return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+      // }
+      // //--------------------------------------------------------------
+      // float noise(vec2 p){
+      // 	vec2 ip = floor(p);
+      // 	vec2 u = fract(p);
+      // 	u = u*u*(3.0-2.0*u);
+      //
+      // 	float res = mix(
+      // 		mix(rand(ip),rand(ip+vec2(1.0,0.0)),u.x),
+      // 		mix(rand(ip+vec2(0.0,1.0)),rand(ip+vec2(1.0,1.0)),u.x),u.y);
+      // 	return res*res;
+      // }
+      // //--------------------------------------------------------------
+      // float mod289(float x){return x - floor(x * (1.0 / 289.0)) * 289.0;}
+      // vec4 mod289(vec4 x){return x - floor(x * (1.0 / 289.0)) * 289.0;}
+      // vec4 perm(vec4 x){return mod289(((x * 34.0) + 1.0) * x);}
+      // //--------------------------------------------------------------
+      // float noise(vec3 p){
+      //     vec3 a = floor(p);
+      //     vec3 d = p - a;
+      //     d = d * d * (3.0 - 2.0 * d);
+      //
+      //     vec4 b = a.xxyy + vec4(0.0, 1.0, 0.0, 1.0);
+      //     vec4 k1 = perm(b.xyxy);
+      //     vec4 k2 = perm(k1.xyxy + b.zzww);
+      //
+      //     vec4 c = k2 + a.zzzz;
+      //     vec4 k3 = perm(c);
+      //     vec4 k4 = perm(c + 1.0);
+      //
+      //     vec4 o1 = fract(k3 * (1.0 / 41.0));
+      //     vec4 o2 = fract(k4 * (1.0 / 41.0));
+      //
+      //     vec4 o3 = o2 * d.z + o1 * (1.0 - d.z);
+      //     vec2 o4 = o3.yw * d.x + o3.xz * (1.0 - d.x);
+      //
+      //     return o4.y * d.y + o4.x * (1.0 - d.y);
+      // }
+      // //--------------------------------------------------------------
+      // //Inigo Quilez, YouTube video ___link___
+      // //Fractional Brownian Motion algorithm, sums several octaves of noise scaled
+      // //inversely proportionally to the height of the octave. Helps achieve more
+      // //organic and nuanced noise
+      // mat2 m = mat2(0.8, -0.6, 0.6, 0.8);
+      //
+      // //This uses an increasing float t to travel through the third dimension of three-
+      // //dimensional noise. It then calculates the two-dimensional fbm by adding octaves
+      // //that constantly travel through u_time with the rate of t.
+      // float fbm(vec2 p, float t){
+      //     float f = 0.0;
+      //     f += 0.5000*noise(vec3(p, t)); p *= m*2.003;
+      //     f += 0.2500*noise(vec3(p, t)); p *= m*2.001;
+      //     f += 0.1250*noise(vec3(p, t)); p *= m*2.002;
+      //     f += 0.0625*noise(vec3(p, t));
+      //     f /= 0.9375;
+      //     return f;
+      // }
+      // float fbm(vec3 p){
+      //     float f = 0.0;
+      //     f += 0.5000*noise(p); p *= 2.003;
+      //     f += 0.2500*noise(p); p *= 2.001;
+      //     f += 0.1250*noise(p); p *= 2.001;
+      //     f += 0.0625*noise(p);
+      //     f /= 0.9375;
+      //     return f;
+      // }
+      // float fbm(vec2 p){
+      //     float f = 0.0;
+      //     f += 0.5000*noise(p); p *= m*2.003;
+      //     f += 0.2500*noise(p); p *= m*2.001;
+      //     f += 0.1250*noise(p); p *= m*2.002;
+      //     f += 0.0625*noise(p);
+      //     f /= 0.9375;
+      //     return f;
+      // }
+      // //--------------------------------------------------------------
+      //
+      // /*Inspired and adapted by Inigo Quilez's article "Domain Warping" on his personal website.
+      // http://www.iquilezles.org/www/articles/warp/warp.htm_
+      //
+      // This follows the principle of domain warping and calculates a noise pattern based on a succession of:
+      // - Using a normalized 2D domain to calculate a first set of noise values
+      // - Using those noise values to deform the original domain while calculating another set of noise
+      // - Repeat
+      //
+      // The domains are scaled to achieve the desired shape/texture and offset to obtain different noise values
+      // from the same function
+      //
+      // Returns three 2D vectors of the different stages of feedback warping
+      // */
+      // float pattern(in vec2 p, out vec2 q, out vec2 r, out vec2 k)
+      //   {
+      //       q.x = fbm(p + vec2(0.0,0.0));
+      //       q.y = fbm(p + vec2(5.2,1.3));
+      //
+      //       r.x = fbm(p + u_mouse.x*20.0*q + vec2(1.7,9.2));
+      //       r.y = fbm(p + u_mouse.x*20.0*q + vec2(8.3,2.8));
+      //
+      //       k.x = fbm(p + u_mouse.x*8.0*r + vec2(5.2,7.2));
+      //       k.y = fbm(p + u_mouse.x*4.0*r + vec2(1.3,1.8));
+      //
+      // 	  //Seeing how far I can push it before it starts looking ugly
+      // 	  vec2 o = vec2(fbm( p + 4.0*k + vec2(4.2,2.2)),
+      // 		      	fbm(p + 4.0*k + vec2(3.3,7.8)));
+      //
+      // 	  //Uncomment for bipolar pattern (-1.0 to 1.0)
+      //       return /*-1.0 +2.0**/fbm( p + 4.0*mix(q, o, u_mouse.y));
+      //   }
+      //
+      // /*Again, inspired by Inigo Quilez and his Domain Warping article and "Drawing an eye" YouTube Video
+      //
+      // --
+      //
+      // The main technique used here is the mixing of colours in different stages and using different domains of varying warping.
+      // The mix between the main colours gets determined by the pattern() function and further mixes using fbms and the Q, R, and K
+      // vectors introduces colour accents.
+      //
+      // */
+      // //--------------------------------------------------------------
+      // vec4 texture(vec2 uv) {
+      //
+      // 	//u_time *= 0.5;
+      //
+      // 	vec2 pos = uv;
+      // 	//Scaling the normalized screen domain to go from -1. to 1.
+      // 	pos = 2.0*pos - 1.0;
+      // 	pos += 0.01*u_time;
+      //
+      //
+      //
+      // 	vec3 color1 = vec3(0.5, 0.4, 0.8);
+      // 	vec3 color2 = vec3(0.2, 0.7, 0.8);
+      // 	color2 *= 1.2;
+      //
+      // 	float freq = 6.0;
+      // 	vec2 Q = vec2(0.0);
+      // 	vec2 R = vec2(0.0);
+      // 	vec2 K = vec2(0.0);
+      // 	vec3 col = mix(color1, color2, pattern(u_time*0.05 - pos*freq, Q, R, K));
+      //
+      // 	//vec3 color3 = vec3(0.7, 0.4, 0.1);
+      // 	vec3 color3 = vec3(0.4, 0.2, 0.7);
+      // 	vec3 color4 = vec3(0.9, 0.2, 0.1);
+      // 	vec3 color5 = mix(color4, vec3(1.0), 0.4+2.8*fbm(pos*10.));
+      // 	col = mix(col, color3, length(Q)*0.2);
+      // 	col = mix(col, color5, pow(length(K), 5.5*(0.3+0.7*u_mouse.y)));
+      // 	//col += vec3();//fbm(p));
+      //
+      // 	vec4 outputColor = vec4(col, 1.0);
+      // 	return outputColor;
+      // }
+      // //--------------------------------------------------------------
+      // // These functions were adapted from YouTube user "dila"'s "Shadertoy Ray Marching Tutorial"
+      // // https://www.youtube.com/watch?v=yxNnRSefK94&t=306s
+      //
+      // //Signed distance mapping function that sets the scene
+      // float map(in vec3 p){
+      //   //  p *= 2.-;
+      //     //p.x += 2.*sin(u_time*0.035);
+      //     p.z += u_time*0.92;
+      //     p.y += u_time*0.65;
+      //     //
+      //     vec3 qint = floor(p*2.0-1.);
+      //     // if(qint.x < -1.){
+      //     // //p += sin(p.x*10.);
+      //     // p *= 1.0+0.001*fbm(p*2.);
+      //
+      //     // }
+      //
+      // 	//Repetition of the domain that holds the sphere. By taking the fractional component
+      // 	//of a larger space we end up with a repetition of the range [0, 1.). That is then scaled
+      // 	//and offset to achieve the -1. to 1. range which is much more useful for our purposes.
+      // 	vec3 qfract = fract(p) * 2.0 -1.0;
+      //     //qfract *= 1.0 +u_mouse.x*fbm(p*2.0);
+      //     //qfract.x *= 1.0 + 60.*un_rmsL*fbm(p*20.);
+      // 	// p * 2.0 -1.0;
+      //
+      //   	//A 3D vectore representing which repetition we're currently at
+      //   	//in either direction.
+      //    // vec3 qint = fract(p) * 2.0 -1.0;
+      //     //angle around the sphere (not working well)
+      //    	//float a = atan(p.x, p.z)/PI;
+      //
+      //     //Radius of the sphere to be displayed
+      //     float r = 0.25;
+      //
+      //     //if left
+      //
+      //     //r += rms;
+      //
+      //     // if(qint.x < 10.*u_mouse.x)
+      //     // 	if(mod(qint.z, 4.0) < 2.)
+      //     // 	r -= 0.2;
+      //
+      //
+      //     //r += 0.02*sin(u_time*20.);
+      //     //r += 0.2*pow(0.5+0.5*sin(u_time*1.), 2.);
+      //     //r += 0.01*dot(qint.x, qint.y);
+      //     //frequency
+      //     float f = 8.;
+      //     //radius modulation
+      //
+      //     //Signed Distance Function for a sphere of radius r centered at the origin. By using
+      //     //qfract as the domain, a sphere is calculated for every repetition of that domain.
+      //     return length(qfract) - r;
+      // }
+      //
+      // //Algorithm that takes the origin and direction of a virtual ray and follows it along
+      // //its path. At each step it checks for intersections with any of the objects in the scene
+      // //and then increments along the path by a smaller amount the closer it gets to the sphere
+      // //so as to avoid overstepping it. Many interesting effects can be obtained by messing with
+      // //these values.
+      // float trace(vec3 ro, vec3 rd){
+      //   	float t = 0.0;
+      //
+      //   	//I found 32 iterations to be a good compromise between rendering quality and performance
+      //     for(int i = 0; i < 32; i ++){
+      //     	//Tracing the ray along its path, calculated as the origin of the ray
+      //     	//plus its direction
+      //       	vec3 p = ro + rd * t;
+      //       	//Testing for intersection with the objects defined in the mapping function
+      //         float d = map(p);
+      //         t += d*0.5;// * an;
+      //   }
+      //     return t;
+      // }
+      //
+      // //Main function for the Ray Marching algorithm
+      // //This is where the domain and radius deformations happen for the spheres
+      // vec4 spheres(vec2 uv){
+      // 	uv = uv * 2.0 - 1.0;
+      //     uv.x *= u_resolution.x/u_resolution.y;
+      //
+      //     float angl = fbm(vec3(uv*2., u_time));
+      //     uv += u_mouse.x*(2.*vec2(cos(angl), sin(angl)) - 1.0);
+      //
+      //
+      //     //ray direction
+      //     vec3 rd = normalize
+      //     (vec3(uv, 1.0));
+      //     //ray origin
+      //     vec3 ro = vec3(0.,0.,0.);
+      // 	//ro.xz *= rotate;
+      //     //   ro.yz *= rotate*0.25;
+      //     //o *= 1. + 0.01*sin(uv.x*20.+u_u_time);
+      //     float t = trace(ro, rd);
+      //     //Fogging function based on the inverse squared distance law
+      //     float light = 1.0/(1.0 + 0.01*pow(t, 2.));
+      //
+      //     //The colour of the spheres
+      //     vec3 col = vec3(1.0);
+      //
+      //
+      //     col *= light;
+      //     return vec4(col, 1.0);
+      // }
+      // //--------------------------------------------------------------
+      //
+      //
+      // //The main function that controls what part of the shader gets displayed
+      // void main(){
+      //     vec2 uv = gl_FragCoord.xy/u_resolution.xy;
+      //
+      //    	//uv += u_mouse.y*(-1. + 2.*(fbm(vec3(uv*5.5, u_u_time*0.025))));
+      //
+      //     vec4 col;
+      //     //Toggle between the two views
+      //
+      //  //   col = texture(uv);
+      //
+      //     	//Applying the colour of the domain-warped texture to the spheres
+      // col = spheres(uv)*texture(uv);
+      //
+      //
+      //     //Fade out
+      //     //col *= smoothstep(0., 1., u_mouse.y);
+      // 	gl_FragColor = col;
+      //
+      // }
+  //        Author:
   // Title:
 
   #ifdef GL_ES
@@ -54,7 +357,7 @@
   //     // Later we might have sphere_1, sphere_2, cube_3, etc...
 
   //     return sphere_0;
-  float u_timeS = u_time * 0.1;
+  float u_timeS = u_time * u_mouse.y  * 0.01  ;
       float displacement = sin(5.0* p.x) * sin(5.0 * p.y) * sin(5.0 * p.z) * 0.25;
       float sphere_0 = distance_from_sphere(p, vec3(sin(u_timeS),cos(u_timeS),min(sin(u_timeS),cos(u_timeS))), 0.5);
    	float sphere_2 = distance_from_sphere(p, vec3(cos(u_timeS),sin(u_timeS*02.3),max(sin(u_timeS),cos(u_timeS))) + vec3(-0.4), 1.0);
@@ -122,7 +425,7 @@
 
       // If we get here, we didn't hit anything so just
       // return a background color (black)
-      return vec3(0.850,0.637,0.653);
+      return vec3(1.0);
   }
 
 
@@ -141,6 +444,7 @@
 
       gl_FragColor = vec4(color,1.0);
   }
+
       </script>
       <script>
           var container;
@@ -201,7 +505,7 @@
           }
 
           function render() {
-              uniforms.u_time.value += 0.05;
+              uniforms.u_time.value += 0.005;
               renderer.render( scene, camera );
           }
       </script>
@@ -283,7 +587,7 @@
     <div class="project" id = "project1">
     <!-- <img src="images/shellGif.gif" alt="HTML5 Icon" class= "projImage pRight"> -->
     <p class = "projText pLeft" >
-      <a href = "#" class = projLink id = "projectLink1">Project One<a>
+      <a href = "#" class = projLink id = "projectLink1"><h2>FRACTURES</h2><a>
       <!-- A generative shell that can be manipulated by a users facial expressions, using computer vision and machine learning. -->
       <br>
        <!-- <a href = "mailto:e.s.oetgen@gmail.com" class ="projLink">Github page/</a> -->
@@ -293,7 +597,7 @@
     <div class="project" id = "project2">
     <!-- <img src="images/dwain.jpg" alt="HTML5 Icon" class= "projImage pLeft"> -->
     <p class = "projText pRight">
-        <a href = "#" class = projLink id = "projectLink1">Project Two<a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>Project Two</h2><a>
       <!-- D.W.A.I.N., a novel digital drum machine using machine learning. Neural networks are used to create arbitrary mappings between knobs and various synthesis parameters.
       <a class = "projLink" href = "https://soundcloud.com/oetgen/sets/dwain-demos">Audio Samples/</a> -->
        <!-- <a class = "projLink" href = "mailto:e.s.oetgen@gmail.com">Github page/</a> -->
@@ -305,7 +609,7 @@
 		<div class="project" id = "project3">
 	  <!-- <img src="images/FLIPA.JPG" alt="HTML5 Icon" class= "projImage pRight" > -->
 	  <p class = "projText pLeft">
-        <a href = "#" class = projLink id = "projectLink1">Project Two<a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>Project Two</h2><a>
 	  <!-- Software for generating beer recipes using swarm intelligence. -->
 	  </p>
 	  </div>
@@ -313,7 +617,7 @@
 	  <!-- <img src="images/tactile.jpeg" alt="HTML5 Icon" class= "projImage pLeft"> -->
 
 	  <p class = "projText pRight">
-        <a href = "#" class = projLink id = "projectLink1">Project Three<a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>Project Three</h2><a>
 	  	<!-- Tactile, an instrument that explores the relationship between what we see and hear.
       <br>
          <a class = "projLink" href = "https://youtu.be/tgzE8__W5Rc">Video/</a> -->
@@ -323,7 +627,7 @@
     	<div class="project" id ="project5">
    <!-- <img src="images/reactionDiffusion.jpeg" alt="HTML5 Icon" class= "projImage pRight"> -->
    <p class = "projText pLeft">
-       <a href = "#" class = projLink id = "projectLink1">Project Five<a>
+       <a href = "#" class = projLink id = "projectLink1"><h2>Project Five</h2><a>
     <!-- Generative image using limited diffusion aggregation. Invisible random walkers move around a 3D space, when they collide with a central node they solidfy and join the structure. -->
    </p>
   </div>
@@ -337,7 +641,7 @@
 	   <div class="project"  id ="project6">
 	  <!-- <img src="images/dust.jpg" alt="HTML5 Icon" class= "projImage pLeft"> -->
 	  <p class = "projText pRight">
-        <a href = "#" class = projLink id = "projectLink1">Project Six<a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>Project Six</h2><a>
 	  <!-- Particle system with force simulation, thousands of particles are drawn towards an invisible moving object. -->
 	  </p>
 	</div>

@@ -112,8 +112,8 @@ overflow:hidden;
 
 .left{
 	/*display: table;*/
-	margin: 0 0% 0% 0%;
-	padding: 2.5%	;
+	margin: 0% 0% 0% 0%;
+	padding: 2.5%	2.5% 5% 2.5%;
 	left: 0;
 	right: 0;
 	width: 47.5%;
@@ -389,6 +389,7 @@ a:active {
 #exit {
 	/* font-family: 'Open Sans', sans-serif; */
 	font-weight: bold;
+	background-color: #F5F400D9;
 	/* color: #F4F7F5; */
 	/* display: none; */
 	position: fixed;

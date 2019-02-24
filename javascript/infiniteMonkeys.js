@@ -61,7 +61,7 @@ showOneImg();
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
+     showExit();
 
    $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
   };
@@ -73,36 +73,37 @@ showOneImg();
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
+     showExit();
 
   $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
   };
 
-  var setProject3 = function($blah) {
+
+
+    var setProject3 = function($blah) {
+      showImg();
+      // $("img2").css("display", "block");
+      $("#exit").css("color", "#08090A");
+
+      $("#title").html($blah);
+      $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+
+      showExit();
+    $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
+    $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
+
+    };
+
+  var setProject4 = function($blah) {
 showOneImg();
     $("#exit").css("color", "#08090A");
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
+   showExit();
 
   $("#mainImg").html('<img src="images/addda.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
-  };
-
-  var setProject4 = function($blah) {
-    showImg();
-    // $("img2").css("display", "block");
-    $("#exit").css("color", "#08090A");
-
-    $("#title").html($blah);
-    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
-
-   $("#exit").html("X");
-
-  $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
-  $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
-
   };
 
   var setTitle = function($blah) {
@@ -112,7 +113,7 @@ showOneImg();
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
+  showExit();
 
   $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id = "actImg" >');
   };
@@ -122,6 +123,8 @@ var hideImg = function() {
   $("#img2").hide();
 
 };
+
+
 
 var showImg = function() {
   $("#mainImg").show();
@@ -134,25 +137,33 @@ var showOneImg = function() {
   $("#img2").hide();
 
 };
+
+var showExit = function(){
+  $("#exit").html("X");
+  $("#exit").css("background-color", "#F5F400D9");
+}
   var showHome = function() {
     // var newTitle =
     $("img2").css("display", "none");
     $("#title").html("Infinite Monkeys");
-    $("#bio").html(" Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. ");
+    $("#bio").html(" Infinite Monkeys is Vytautas Niedvaras, Dimitris Kyriakoudis and Edmund Oetgen. Their works are an exploration  of technology's influence over social, temporal and spatial interactions  ");
     // $("#exit").css("color", "#F4F7F5");
     hideImg();
-     $("#exit").html("-");
+      $("#exit").css("background-color", "transparent");
+     $("#exit").html("");
 
        // $("#img2").hide();
   };
 
       $('#exit').click(function(){ showHome(); return false; });
-      $('#project1').click(function(){ setProject1("Project One"); return false; });
-      $('#project2').click(function(){ setProject2("Project Two"); return false; });
-      $('#project3').click(function(){ setProject3("Project Three"); return false; });
-      $('#project4').click(function(){ setProject4("Project Four"); return false; });
+      $('#project1').click(function(){ setProject1("FRACTURES"); return false; });
+      $('#project2').click(function(){ setProject2("ADDDA"); return false; });
+      $('#project3').click(function(){ setProject3("SHELLS"); return false; });
+      $('#project4').click(function(){ setProject4("WELCOME, #"); return false; });
       $('#project5').click(function(){ setTitle("Project Five"); return false; });
       $('#project6').click(function(){ setTitle("Project Six"); return false; });
       $('#mainImg').click(function(){  modal(); return false; });
        $('#close').click(function(){ closeModal(); return false; });
+
+ showHome();
 });

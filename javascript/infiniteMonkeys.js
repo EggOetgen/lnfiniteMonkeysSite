@@ -3,20 +3,41 @@ $(document).ready(function() {
   var hideImg = function() {
     $("#mainImg").hide();
     $("#img2").hide();
-
-  };
-
-  var showImg = function() {
-    $("#mainImg").show();
-    $("#img2").show();
+    $("#img3").hide();
+    $("#img4").hide();
 
   };
 
   var showOneImg = function() {
     $("#mainImg").show();
     $("#img2").hide();
+    $("#img3").hide();
+    $("#img4").hide();
 
   };
+  var showTwoImg = function() {
+    $("#mainImg").show();
+    $("#img2").show();
+    $("#img3").hide();
+    $("#img4").hide();
+
+  };
+
+  var showThreeImg = function() {
+    $("#mainImg").show();
+    $("#img2").show();
+    $("#img3").show();
+    $("#img4").hide();
+
+  };
+  var showFourImg = function() {
+    $("#mainImg").show();
+    $("#img2").show();
+    $("#img3").show();
+    $("#img4").show();
+
+  };
+
 
   var showExit = function(){
     $("#exit").html("X");
@@ -72,7 +93,7 @@ $(document).ready(function() {
 
 
     var setProject3 = function($blah) {
-      showImg();
+      showTwoImg();
       showExit();
 
       $("#title").html($blah);
@@ -99,17 +120,20 @@ $(document).ready(function() {
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-    $("#mainImg").html('<img src="images/timeLines.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#mainImg").html('<img src="images/timeLines.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
   var setProject6 = function($blah) {
-    showOneImg();
+    showFourImg();
     showExit();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-    $("#mainImg").html('<img src="images/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#img2").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg" >');
+    $("#mainImg").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#img3").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+
   };
 
   var setTitle = function($blah) {

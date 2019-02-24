@@ -69,11 +69,11 @@ $(document).ready(function() {
     $("#exit").html("");
   }
 
-  var modal = function(){
+  var modal = function($imgId){
   // showOneImg();
-  var newSrc = $("#actImg").attr('src');
+  var newSrc = $($imgId).attr('src');
   $("#img01").attr('src', newSrc);
-  console.log($("#actImg").attr('src'));
+  console.log(newSrc, $imgId) ;
 
   $(".modal").css("display", "block");
   }
@@ -124,7 +124,7 @@ $(document).ready(function() {
       $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
       $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
-      $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
+      $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg2">>');
     };
 
   var setProject4 = function($blah) {
@@ -165,12 +165,12 @@ $(document).ready(function() {
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-    $("#img3").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg" > <p>"thisis some text"</p>');
+    $("#img3").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">> <p>"thisis some text"</p>');
     // $("#img3Text").html("thisis some text");
 
     $("#mainImg").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
-    $("#img4").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
-    $("#img2").html('<br> <p>Using ray marching techniques to generate evolving graphics in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg"> ');
+    $("#img4").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg4">');
+    $("#img2").html('<br> <p>Using ray marching techniques to generate evolving graphics in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg2"> ');
 
 
   };
@@ -226,7 +226,11 @@ $(document).ready(function() {
       $('#project5').click(function(){ setProject5("TIMELINES"); return false; });
       $('#project6').click(function(){ setProject6("AUDIOVISUAL EXPERIMENTS"); return false; });
       $('#project7').click(function(){ setProject7("D.W.A.I.N."); return false; });
-      $('#mainImg').click(function(){  modal(); return false; });
+      $('#mainImg').click(function(){  modal("#actImg"); return false; });
+      $('#img2').click(function(){     modal("#actImg2"); return false; });
+      $('#img3').click(function(){  modal("#actImg3"); return false; });
+      $('#img4').click(function(){  modal("#actImg4"); return false; });
+
       $('#close').click(function(){ closeModal(); return false; });
 
  showHome();

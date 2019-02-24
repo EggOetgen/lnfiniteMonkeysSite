@@ -29,7 +29,7 @@ background-color:#8EEEFF00;
 	 /* display: none; */
  }
 
- #mainImg{
+ .mainBoxImg{
   /* display: none; */
 	cursor: pointer;
   transition: 0.3s;

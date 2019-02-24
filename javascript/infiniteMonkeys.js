@@ -37,9 +37,30 @@ $(document).ready(function() {
     $("#img4").show();
 
   };
+  var showLinks = function($test){
+
+    if($test == 1){
+      $("#bioLink1").show();
+      $("#bioLink2").hide();
+    }else if($test ==2){
+        $("#bioLink1").show();
+        $("#bioLink2").show();
+    }
+
+  }
+
+  var hideLinks = function(){
+
+
+        $("#bioLink1").hide();
+        $("#bioLink2").hide();
+
+
+  }
 
 
   var showExit = function(){
+    // hideLinks(123);
     $("#exit").html("X");
     $("#exit").css("background-color", "#F5F400D9");
   }
@@ -73,16 +94,18 @@ $(document).ready(function() {
   var setProject1 = function($blah) {
     showOneImg();
     showExit();
+    hideLinks();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
-
+  // console.log(  $("#mainImg ").children('img').html() );
     $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
   };
 
   var setProject2 = function($blah) {
     showOneImg();
     showExit();
+      hideLinks();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
@@ -95,6 +118,7 @@ $(document).ready(function() {
     var setProject3 = function($blah) {
       showTwoImg();
       showExit();
+        hideLinks();
 
       $("#title").html($blah);
       $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
@@ -106,6 +130,7 @@ $(document).ready(function() {
   var setProject4 = function($blah) {
     showOneImg();
     showExit();
+      hideLinks();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
@@ -116,6 +141,7 @@ $(document).ready(function() {
   var setProject5 = function($blah) {
     showOneImg();
     showExit();
+      hideLinks();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
@@ -126,15 +152,35 @@ $(document).ready(function() {
   var setProject6 = function($blah) {
     showFourImg();
     showExit();
+      hideLinks();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-    $("#img3").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg" >');
+    $("#img3").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg" > <p>"thisis some text"</p>');
+    // $("#img3Text").html("thisis some text");
+
     $("#mainImg").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
     $("#img4").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
-    $("#img2").html('<img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#img2").html('<br> <p>Using ray marching techniques to generate evolving graphics in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg"> ');
 
+  };
+
+  var setProject7 = function($blah) {
+    showOneImg();
+    showExit();
+    showLinks(2);
+
+    $("#title").html($blah);
+    $("#bio").html("An inteligent drum machine. Machine learning techniques used to create create arbitrary mappings between knobs and various synthesis parameters. A performer can then use these knobs to explore the sound space in real time, allowing for more expressive interactions than those offered by traditional electronic instruments ");
+
+    $("#bioLink1").attr('href', 'https://soundcloud.com/oetgen/gabber-jam?in=oetgen/sets/dwain-demos');
+    $("#bioLink1").html('AUDIO');
+
+    $("#bioLink2").attr('href', 'https://www.instagram.com/p/Bj_6O4OgqRW/?utm_source=ig_web_copy_link');
+    $("#bioLink2").html('VIDEO');
+
+    $("#mainImg").html('<img src="images/dwain2.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
   var setTitle = function($blah) {
@@ -169,10 +215,10 @@ $(document).ready(function() {
       $('#project3').click(function(){ setProject3("SHELLS"); return false; });
       $('#project4').click(function(){ setProject4("WELCOME, #"); return false; });
       $('#project5').click(function(){ setProject5("TIMELINES"); return false; });
-      $('#project6').click(function(){ setProject6("SHADER"); return false; });
-      $('#project7').click(function(){ setProject6("D.W.A.I.N."); return false; });
+      $('#project6').click(function(){ setProject6("AUDIOVISUAL EXPERIMENTS"); return false; });
+      $('#project7').click(function(){ setProject7("D.W.A.I.N."); return false; });
       $('#mainImg').click(function(){  modal(); return false; });
-       $('#close').click(function(){ closeModal(); return false; });
+      $('#close').click(function(){ closeModal(); return false; });
 
  showHome();
 });

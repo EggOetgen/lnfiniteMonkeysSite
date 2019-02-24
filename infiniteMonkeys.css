@@ -247,7 +247,17 @@ a.projLink:visited {
     color: #3C594E;
 
 }
-
+#bioLink2{
+	float: left;
+}
+a:link.bioLink{
+	background-color: #F5F400D9;
+	font-weight: bold;
+	float:right;
+	display: block;
+	font-size: 2em;
+	padding: 0% 1% 0% 1%;
+}
 .project:hover  a.projLink {
     text-decoration: none;
 			background-color: #F5F400D9;

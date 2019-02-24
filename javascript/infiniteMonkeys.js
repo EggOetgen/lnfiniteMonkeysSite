@@ -220,7 +220,7 @@ $(document).ready(function() {
 
       $('#exit').click(function(){ showHome(); return false; });
       $('#project1').click(function(){ setProject1("FRACTURES"); return false; });
-      $('#project2').click(function(){ setProject2("ADDDA"); return false; });
+      $('#project2').click(function(){ setProject2("ADD A"); return false; });
       $('#project3').click(function(){ setProject3("SHELLS"); return false; });
       $('#project4').click(function(){ setProject4("WELCOME, #"); return false; });
       $('#project5').click(function(){ setProject5("TIMELINES"); return false; });

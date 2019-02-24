@@ -92,7 +92,7 @@ $(document).ready(function() {
   };
 
   var setProject1 = function($blah) {
-    showOneImg();
+    showFourImg();
     showExit();
     hideLinks();
 
@@ -100,6 +100,10 @@ $(document).ready(function() {
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
   // console.log(  $("#mainImg ").children('img').html() );
     $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
+    $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
+    $("#img3").html('<img src="images/rend3.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
+    $("#img4").html('<img src="images/rend4.png" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
+
   };
 
   var setProject2 = function($blah) {
@@ -116,15 +120,17 @@ $(document).ready(function() {
 
 
     var setProject3 = function($blah) {
-      showTwoImg();
+      showFourImg();
       showExit();
         hideLinks();
 
       $("#title").html($blah);
-      $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+      $("#bio").html("A series of experiments on paratmetric design, user interaction and machine learning. <br> <br> A seashell is graphically generated in real time, it's shape dictated by a mathematical formula. Facial recognition software passes information into a neural network which in turn send data into the formula, allowing the user to control the form of the shell by changing their expression. These shells can then be exported given physical form using a 3D printer <br> <br>");
 
       $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
-      $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg2">>');
+      $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
+      $("#img3").html('<img src="images/shell1.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
+      $("#img4").html('<img src="images/shell4.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
     };
 
   var setProject4 = function($blah) {
@@ -144,7 +150,7 @@ $(document).ready(function() {
       showLinks(2);
 
     $("#title").html($blah);
-    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+    $("#bio").html("TimeLines is an extremely powerful, versatile, and customizable modular synth and sequencer in the form of a live coding language. <br> <br>It is based on the idea that music is a function of time. This simply means that, ultimately, music is what emerges as time flows forwards, bringing about all changes in sound that we perceive as melodies, rhythms, chord progressions etc. In other words, if a painting is experienced by looking along the space of a canvas, then a piece of music is experienced by listening to it through time, from its beginning till the end. TimeLines builds on that concept by forming all musical structure as functions of explicit time.<br> <br> ");
 
     $("#mainImg").html('<img src="images/timeLines.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
 
@@ -165,7 +171,7 @@ $(document).ready(function() {
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-    $("#img3").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">> <p>"thisis some text"</p>');
+    $("#img3").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
     // $("#img3Text").html("thisis some text");
 
     $("#mainImg").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');

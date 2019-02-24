@@ -112,7 +112,7 @@ overflow:hidden;
 
 .left{
 	/*display: table;*/
-	margin: 0 2.5% 0% 0%;
+	margin: 0 0% 0% 0%;
 	padding: 2.5%	;
 	left: 0;
 	right: 0;
@@ -124,6 +124,7 @@ overflow:hidden;
 	background-color:#FFFFFF00 ;
 	/* border: 5px solid ; */
 	overflow: scroll ;
+	display: inline;
 }
 
 /* ::-webkit-scrollbar {
@@ -134,7 +135,7 @@ overflow:hidden;
 	margin:  0% 0% 2.5% 0%;
 	/* left:50%; */
 	/* position: fixed; */
-	width: 45%;
+	width: 47.5%;
 	height: 100vh;
 	/* border: 5px solid ; */
 		/* padding-left:  2.5%; */
@@ -150,6 +151,35 @@ display: inline-block;
 	overflow: scroll;
 /* position: fixed; */
 	/*border-left: 2px solid black;*/
+}
+
+.middle{
+float: left;
+	width: 100%;
+	/* left:100%; */
+	margin: 0%;
+	padding: 0%;
+height: 2.5;
+/* position: fixed; */
+/* Safari */
+-webkit-transform: rotate(-90deg);
+background-color: yellow;
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+p.middle{
+	text-align:center;
+
 }
 p.bio{
 
@@ -333,11 +363,16 @@ a:active {
 
 }
 #project5	  {
-	background-image: url("images/temp.png");
+	background-image: url("images/timeLines.jpg");
 
 }
 #project6	  {
-	background-image: url("images/temp.png");
+	background-image: url("images/dimiShaderWater.png");
+
+}
+
+#project7	  {
+	background-image: url("images/dwainC.png");
 
 }
 

@@ -92,6 +92,26 @@ $(document).ready(function() {
     $("#mainImg").html('<img src="images/addda.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
+  var setProject5 = function($blah) {
+    showOneImg();
+    showExit();
+
+    $("#title").html($blah);
+    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+
+    $("#mainImg").html('<img src="images/timeLines.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+  };
+
+  var setProject6 = function($blah) {
+    showOneImg();
+    showExit();
+
+    $("#title").html($blah);
+    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+
+    $("#mainImg").html('<img src="images/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+  };
+
   var setTitle = function($blah) {
 
     showExit();
@@ -123,8 +143,9 @@ $(document).ready(function() {
       $('#project2').click(function(){ setProject2("ADDDA"); return false; });
       $('#project3').click(function(){ setProject3("SHELLS"); return false; });
       $('#project4').click(function(){ setProject4("WELCOME, #"); return false; });
-      $('#project5').click(function(){ setTitle("Project Five"); return false; });
-      $('#project6').click(function(){ setTitle("Project Six"); return false; });
+      $('#project5').click(function(){ setProject5("TIMELINES"); return false; });
+      $('#project6').click(function(){ setProject6("SHADER"); return false; });
+      $('#project7').click(function(){ setProject6("D.W.A.I.N."); return false; });
       $('#mainImg').click(function(){  modal(); return false; });
        $('#close').click(function(){ closeModal(); return false; });
 

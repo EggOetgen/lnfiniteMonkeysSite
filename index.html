@@ -22,7 +22,8 @@
       </script>
       <script id="fragmentShader" type="x-shader/x-fragment">
 #ifdef GL_ES
-	precision mediump float;
+	// precision mediump float;
+  	precision lowp float;
 #endif
 
 #extension GL_OES_standard_derivatives : enable
@@ -322,14 +323,14 @@ uniform float u_time;
 	</div>
 
 
-<div class = bottom>
+<div class = "bottom">
 	<div class = "right">
 
     <div class = "rightScroll">
     <div class="project" id = "project1">
     <!-- <img src="images/shellGif.gif" alt="HTML5 Icon" class= "projImage pRight"> -->
     <p class = "projText pLeft" >
-      <a href = "#" class = projLink id = "projectLink1"><h2>FRACTURES</h2><a>
+      <a href = "#" class = projLink id = "projectLink1"><h2>FRACTURES</h2></a>
       <!-- A generative shell that can be manipulated by a users facial expressions, using computer vision and machine learning. -->
       <br>
        <!-- <a href = "mailto:e.s.oetgen@gmail.com" class ="projLink">Github page/</a> -->
@@ -339,7 +340,7 @@ uniform float u_time;
     <div class="project" id = "project2">
     <!-- <img src="images/dwain.jpg" alt="HTML5 Icon" class= "projImage pLeft"> -->
     <p class = "projText pRight">
-        <a href = "#" class = projLink id = "projectLink1"><h2>ADDA</h2><a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>ADDA</h2></a>
       <!-- D.W.A.I.N., a novel digital drum machine using machine learning. Neural networks are used to create arbitrary mappings between knobs and various synthesis parameters.
       <a class = "projLink" href = "https://soundcloud.com/oetgen/sets/dwain-demos">Audio Samples/</a> -->
        <!-- <a class = "projLink" href = "mailto:e.s.oetgen@gmail.com">Github page/</a> -->
@@ -350,7 +351,7 @@ uniform float u_time;
     <!-- <img src="images/tactile.jpeg" alt="HTML5 Icon" class= "projImage pLeft"> -->
 
     <p class = "projText pRight">
-        <a href = "#" class = projLink id = "projectLink1"><h2>SHELLS</h2><a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>SHELLS</h2></a>
       <!-- Tactile, an instrument that explores the relationship between what we see and hear.
       <br>
          <a class = "projLink" href = "https://youtu.be/tgzE8__W5Rc">Video/</a> -->
@@ -361,7 +362,7 @@ uniform float u_time;
 		<div class="project" id = "project4">
 	  <!-- <img src="images/FLIPA.JPG" alt="HTML5 Icon" class= "projImage pRight" > -->
 	  <p class = "projText pLeft">
-        <a href = "#" class = projLink id = "projectLink1"><h2>WELCOME, #</h2><a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>WELCOME, #</h2></a>
 	  <!-- Software for generating beer recipes using swarm intelligence. -->
 	  </p>
 	  </div>
@@ -369,7 +370,7 @@ uniform float u_time;
     	<div class="project" id ="project5">
    <!-- <img src="images/reactionDiffusion.jpeg" alt="HTML5 Icon" class= "projImage pRight"> -->
    <p class = "projText pLeft">
-       <a href = "#" class = projLink id = "projectLink1"><h2>Project Five</h2><a>
+       <a href = "#" class = projLink id = "projectLink1"><h2>TIMELINES</h2></a>
     <!-- Generative image using limited diffusion aggregation. Invisible random walkers move around a 3D space, when they collide with a central node they solidfy and join the structure. -->
    </p>
   </div>
@@ -383,10 +384,17 @@ uniform float u_time;
 	   <div class="project"  id ="project6">
 	  <!-- <img src="images/dust.jpg" alt="HTML5 Icon" class= "projImage pLeft"> -->
 	  <p class = "projText pRight">
-        <a href = "#" class = projLink id = "projectLink1"><h2>Project Six</h2><a>
+        <a href = "#" class = projLink id = "projectLink1"><h2>SHADER</h2></a>
 	  <!-- Particle system with force simulation, thousands of particles are drawn towards an invisible moving object. -->
 	  </p>
 	</div>
+  <div class="project"  id ="project7">
+ <!-- <img src="images/dust.jpg" alt="HTML5 Icon" class= "projImage pLeft"> -->
+ <p class = "projText pRight">
+     <a href = "#" class = projLink id = "projectLink1"><h2>D.W.A.I.N.</h2></a>
+ <!-- Particle system with force simulation, thousands of particles are drawn towards an invisible moving object. -->
+ </p>
+</div>
 
 	  </ul>
 	</div>
@@ -395,10 +403,8 @@ uniform float u_time;
 	<!-- </div> -->
 
 
-	<!-- <div class="col span_half_of_3">
 
-	 --></div>
-
+<!-- <div class = "middle" ><p>test</p> </div> -->
 </div>
 
 </body>

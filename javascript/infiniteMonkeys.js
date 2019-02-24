@@ -130,9 +130,10 @@ $(document).ready(function() {
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-    $("#img2").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg" >');
+    $("#img3").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg" >');
     $("#mainImg").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
-    $("#img3").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#img4").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#img2").html('<img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
 
   };
 

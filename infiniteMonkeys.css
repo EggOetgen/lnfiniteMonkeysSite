@@ -396,6 +396,16 @@ a:active {
 	padding: 0% 1% 0% 1%;
 
 }
+
+#email{
+
+	padding-left: 1%;
+	padding-right: 1%;
+}
+#email:hover	{
+	background-color: #F5F400D9;
+	color:#08090A;
+}
 .shortLinks{
 visibility: collapse;
 height: 0px;

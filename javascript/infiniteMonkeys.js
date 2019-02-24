@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-  document.getElementById("bio").innerHTML = "Hello, World!";
+  // document.getElementById("bio").innerHTML = "Hello, World!";
   //
   // // // Get the modal
   // // var modal = document.getElementById('myModal');
@@ -27,12 +27,12 @@ $(document).ready(function() {
   // }
 
 var modal = function(){
-
-$("#img01").html($("#mainImg").html());
+// showOneImg();
+var newSrc = $("#actImg").attr('src');
+$("#img01").attr('src', newSrc);
+console.log($("#actImg").attr('src'));
 
 $(".modal").css("display", "block");
-console.log("test");
-
 }
 var closeModal = function(){
 
@@ -63,7 +63,7 @@ showOneImg();
 
    $("#exit").html("X");
 
-  $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" >');
+   $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
   };
 
   var setProject2 = function($blah) {
@@ -75,7 +75,7 @@ showOneImg();
 
    $("#exit").html("X");
 
-  $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg" >');
+  $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
   };
 
   var setProject3 = function($blah) {
@@ -87,7 +87,7 @@ showOneImg();
 
    $("#exit").html("X");
 
-  $("#mainImg").html('<img src="images/addda.png" alt="Project Image" class= "mainBoxImg" >');
+  $("#mainImg").html('<img src="images/addda.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
   var setProject4 = function($blah) {
@@ -100,7 +100,7 @@ showOneImg();
 
    $("#exit").html("X");
 
-  $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg" >');
+  $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
   $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
 
   };
@@ -114,7 +114,7 @@ showOneImg();
 
    $("#exit").html("X");
 
-  $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
+  $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id = "actImg" >');
   };
 
 var hideImg = function() {
@@ -154,5 +154,5 @@ var showOneImg = function() {
       $('#project5').click(function(){ setTitle("Project Five"); return false; });
       $('#project6').click(function(){ setTitle("Project Six"); return false; });
       $('#mainImg').click(function(){  modal(); return false; });
-       $('.close').click(function(){ closeModal(); return false; });
+       $('#close').click(function(){ closeModal(); return false; });
 });

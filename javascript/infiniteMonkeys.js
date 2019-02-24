@@ -141,12 +141,20 @@ $(document).ready(function() {
   var setProject5 = function($blah) {
     showOneImg();
     showExit();
-      hideLinks();
+      showLinks(2);
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
     $("#mainImg").html('<img src="images/timeLines.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+
+
+        $("#bioLink1").attr('href', 'https://github.com/lnfiniteMonkeys/TimeLines');
+        $("#bioLink1").html('GITHUB');
+
+        $("#bioLink2").attr('href', 'https://www.youtube.com/channel/UCqypIKZibRqhOz8QPFgwg1Q');
+        $("#bioLink2").html('YOUTUBE');
+
   };
 
   var setProject6 = function($blah) {
@@ -163,6 +171,7 @@ $(document).ready(function() {
     $("#mainImg").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
     $("#img4").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
     $("#img2").html('<br> <p>Using ray marching techniques to generate evolving graphics in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg"> ');
+
 
   };
 

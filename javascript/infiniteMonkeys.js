@@ -1,94 +1,132 @@
 $(document).ready(function() {
 
-  var MyBlah = function($blah) {
+  var hideImg = function() {
+    $("#mainImg").hide();
+    $("#img2").hide();
 
-     $("#bio").html("This is some example text about project number one! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+  };
 
-    };
+  var showImg = function() {
+    $("#mainImg").show();
+    $("#img2").show();
+
+  };
+
+  var showOneImg = function() {
+    $("#mainImg").show();
+    $("#img2").hide();
+
+  };
+
+  var showExit = function(){
+    $("#exit").html("X");
+    $("#exit").css("background-color", "#F5F400D9");
+  }
+  var hideExit = function(){
+    $("#exit").css("background-color", "transparent");
+    $("#exit").html("");
+  }
+
+  var modal = function(){
+  // showOneImg();
+  var newSrc = $("#actImg").attr('src');
+  $("#img01").attr('src', newSrc);
+  console.log($("#actImg").attr('src'));
+
+  $(".modal").css("display", "block");
+  }
+  var closeModal = function(){
+
+  // $("#img01").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg" >');
+
+  $(".modal").css("display", "none");
+  console.log("test");
+
+  }
+
 
   var getTitle = function(){
     var title = $(project1).text();
   };
 
   var setProject1 = function($blah) {
-
-    $("#exit").css("color", "#08090A");
+    showOneImg();
+    showExit();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
-
-  $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" >');
+    $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
   };
 
   var setProject2 = function($blah) {
-
-    $("#exit").css("color", "#08090A");
-
-    $("#title").html($blah);
-    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
-
-   $("#exit").html("X");
-
-  $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg" >');
-  };
-
-  var setProject3 = function($blah) {
-
-    $("#exit").css("color", "#08090A");
+    showOneImg();
+    showExit();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
-
-  $("#mainImg").html('<img src="images/addda.png" alt="Project Image" class= "mainBoxImg" >');
+    $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
   };
+
+
+
+    var setProject3 = function($blah) {
+      showImg();
+      showExit();
+
+      $("#title").html($blah);
+      $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+
+      $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
+      $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
+    };
 
   var setProject4 = function($blah) {
-    $("img2").css("display", "block");
-    $("#exit").css("color", "#08090A");
+    showOneImg();
+    showExit();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
-
-  $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg" >');
-  $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
-
+    $("#mainImg").html('<img src="images/addda.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
   var setTitle = function($blah) {
 
-    $("#exit").css("color", "#08090A");
+    showExit();
+
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-   $("#exit").html("X");
-
-  $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg" >');
+    $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id = "actImg" >');
   };
 
+
   var showHome = function() {
-    // var newTitle =
-    $("img2").css("display", "none");
-    $("#title").html("Infinite Monkeys");
-    $("#bio").html(" Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. ");
-    // $("#exit").css("color", "#F4F7F5");
-    $("#mainImg").html('<img src="images/us.png" alt="HTML5 Icon" class= "mainBoxImg" >');
-     $("#exit").html("-");
+
+
+    $("#title").html("INFINTE MONKEYS");
+    $("#bio").html(" Infinite Monkeys is Vytautas Niedvaras, Dimitris Kyriakoudis and Edmund Oetgen. Their works are an exploration  of technology's influence over social, temporal and spatial interactions  ");
+
+    hideImg();
+    hideExit();
+
+
+
        // $("#img2").hide();
   };
 
       $('#exit').click(function(){ showHome(); return false; });
-      $('#project1').click(function(){ setProject1("Project One"); return false; });
-      $('#project2').click(function(){ setProject2("Project Two"); return false; });
-      $('#project3').click(function(){ setProject3("Project Three"); return false; });
-      $('#project4').click(function(){ setProject4("Project Four"); return false; });
+      $('#project1').click(function(){ setProject1("FRACTURES"); return false; });
+      $('#project2').click(function(){ setProject2("ADDDA"); return false; });
+      $('#project3').click(function(){ setProject3("SHELLS"); return false; });
+      $('#project4').click(function(){ setProject4("WELCOME, #"); return false; });
       $('#project5').click(function(){ setTitle("Project Five"); return false; });
       $('#project6').click(function(){ setTitle("Project Six"); return false; });
+      $('#mainImg').click(function(){  modal(); return false; });
+       $('#close').click(function(){ closeModal(); return false; });
+
+ showHome();
 });
-//document.getElementById("bio").innerHTML = "Hello, World!";

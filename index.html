@@ -24,27 +24,27 @@
 #ifdef GL_ES
 	precision mediump float;
 #endif
-	
+
 #extension GL_OES_standard_derivatives : enable
 #ifdef GL_ES
 	precision mediump float;
 #endif
-	
+
 #extension GL_OES_standard_derivatives : enable
-	
-	
+
+
 //PI constant
 #define PI 3.14159265359;
-	
+
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
-	
+
 
 //GLSL Noise functions, Patricio Gonzalez Vivo's GitHub
 //https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
 	//--------------------------------------------------------------
-	float rand(vec2 n) { 
+	float rand(vec2 n) {
 	    return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
 	}
 	//--------------------------------------------------------------
@@ -52,7 +52,7 @@ uniform float u_time;
 	    vec2 ip = floor(p);
 	    vec2 u = fract(p);
 	    u = u*u*(3.0-2.0*u);
-	    
+
 	    float res = mix(
 		mix(rand(ip),rand(ip+vec2(1.0,0.0)),u.x),
 		mix(rand(ip+vec2(0.0,1.0)),rand(ip+vec2(1.0,1.0)),u.x),u.y);
@@ -67,25 +67,25 @@ uniform float u_time;
 	    vec3 a = floor(p);
 	    vec3 d = p - a;
 	    d = d * d * (3.0 - 2.0 * d);
-	    
+
 	    vec4 b = a.xxyy + vec4(0.0, 1.0, 0.0, 1.0);
 	    vec4 k1 = perm(b.xyxy);
 	    vec4 k2 = perm(k1.xyxy + b.zzww);
-	    
+
 	    vec4 c = k2 + a.zzzz;
 	    vec4 k3 = perm(c);
 	    vec4 k4 = perm(c + 1.0);
-	    
+
 	    vec4 o1 = fract(k3 * (1.0 / 41.0));
 	    vec4 o2 = fract(k4 * (1.0 / 41.0));
-	    
+
 	    vec4 o3 = o2 * d.z + o1 * (1.0 - d.z);
 	    vec2 o4 = o3.yw * d.x + o3.xz * (1.0 - d.x);
-	    
+
 	    return o4.y * d.y + o4.x * (1.0 - d.y);
 	}
 	mat2 m = mat2(0.8, -0.6, 0.6, 0.8);
-	
+
 	float fbm(vec2 p, float t){
 	    float f = 0.0;
 	    f += 0.5000*noise(vec3(p, t)); p *= m*2.003;
@@ -93,7 +93,7 @@ uniform float u_time;
 	    f += 0.1250*noise(vec3(p, t)); p *= m*2.002;
 	    f += 0.0625*noise(vec3(p, t));
 	    f /= 0.9375;
-	    return f;    
+	    return f;
 	}
 	float fbm(vec3 p){
 	    float f = 0.0;
@@ -114,7 +114,7 @@ uniform float u_time;
 	    return f;
 	}
 	//--------------------------------------------------------------
-	
+
 #define SPEED 0.2
 #define FREQ1 3.5
 #define FREQ2 2.9
@@ -131,24 +131,24 @@ uniform float u_time;
 	    k = vec2(fbm(SCALE*r + p*FREQ1 + 13223., SPEED*u_time),
 		     fbm(SCALE*r + p*FREQ2 + 12344., SPEED*u_time)
 		    );
-	    
+
 	    vec2 o = vec2(fbm(SCALE*k + p*FREQ1 + 1923., SPEED*u_time),
 			  fbm(SCALE*k + p*FREQ2 + 153., SPEED*u_time)
 			 );
-	    
+
 	    return fbm( p + 4.*mix(q, o, 0.5+0.5*sin(u_time*SPEED)));
 	}
-	
+
 	vec4 texture(vec2 uv){
-	    
+
 	    vec2 pos = uv;
 	    //Scaling the normalized screen domain to go from -1. to 1.
 	    pos = 2.0*pos - 1.0;
 	    //pos += 0.01*u_time;
-	    
+
 	    vec3 color1 = vec3(1.0);
 	    vec3 color2 = vec3(0.0);
-	    
+
 	    float freq = 5.5;
 	    vec2 Q = vec2(0.0);
 	    vec2 R = vec2(0.0);
@@ -156,19 +156,19 @@ uniform float u_time;
 	    vec3 col = mix(color1, color2, clamp(
 		pow(0.15 + pattern(pos*freq, Q, R, K), 5.2),
 		0.0, 0.5));
-	    
+
 	    vec4 outputColor = vec4(col, 1.0);
 	    return outputColor;
 	}
-	
+
 	void main(){
 	    vec2 uv = gl_FragCoord.xy/u_resolution.xy;
-	    
+
 	    vec4 col = texture(uv);
-	    
-	    
+
+
 	    gl_FragColor = col;
-	    
+
 	}
       </script>
       <script>
@@ -176,12 +176,15 @@ uniform float u_time;
         var camera, scene, renderer;
         var uniforms;
 	var currMouseX = 0, currMouseY = 0, prevMouseX = 0, prevMouseY = 0;
-	    
+   
         init();
+
+        
         animate();
-	
+
         function init() {
             container = document.getElementById( 'container' );
+
 	    
             camera = new THREE.Camera();
             camera.position.z = 1;
@@ -192,6 +195,8 @@ uniform float u_time;
 	    var accumTime = 0;
 	    
             uniforms = {
+
+              
                   u_time: { type: "f", value: 1.0 },
                   u_resolution: { type: "v2", value: new THREE.Vector2() },
                   u_mouse: { type: "v2", value: new THREE.Vector2() }
@@ -202,6 +207,7 @@ uniform float u_time;
                   vertexShader: document.getElementById( 'vertexShader' ).textContent,
                   fragmentShader: document.getElementById( 'fragmentShader' ).textContent
               } );
+
 	    
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
@@ -233,6 +239,8 @@ uniform float u_time;
             render();
         }
 	
+
+        
         function render() {
 	    let mouseDelta = 1.9*(Math.abs(currMouseX - prevMouseX) + Math.abs(currMouseY - prevMouseY));
 	    let timeIncr = 0.05;
@@ -242,7 +250,7 @@ uniform float u_time;
 	    prevMouseX = currMouseX;
 	    prevMouseY = currMouseY;
         }
-	
+
       </script>
 
 
@@ -263,25 +271,15 @@ uniform float u_time;
       <div class = "shortLinks">
        <p>
          Infinite Monkeys
-         <!-- <a href ="https://www.instagram.com/odmundeetgen/"> IG/</a>
-
-
-       <a href = "https://github.com/EggOetgen">Git/</a>
-
-
-        <a href = "mailto:e.s.oetgen@gmail.com">E-Mail/</a> -->
-
-
        </p>
      </div>
 	      <div class = "bio">
 
              <!-- <button type="button" id = "menButton">Click Me!</button> -->
-	     <h1 id = "title"> Infinite Monkeys</h1>
+	     <h1 id = "title"> </h1>
 	     	<br>
 
 	     <p class = "bio" id = "bio">
-         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam.
          <!-- Infinite Monkeys is Vytautas Niedvaras, Dimitris Kyriakoudis and Edmund Oetgen. -->
        </p>
          <br>
@@ -291,11 +289,24 @@ uniform float u_time;
 
 
        <div id = "mainImg">
-       <img src="images/us.png" alt="HTML5 Icon" class= "mainBoxImg" >
+       <img src="" alt="HTML5 Icon" class= "mainBoxImg" id = 'actImg'>
      </div>
      <div id = "img2">
-     <img src="images/us.png" alt="HTML5 Icon" class= "mainBoxImg" >
+     <img src="" alt="HTML5 Icon" class= "mainBoxImg" >
    </div>
+
+   <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span id="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img src="images/us.png" alt="HTML5 Icon" class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
 
 
 	      <!-- <divclass = "break"> </div> -->
@@ -342,26 +353,26 @@ uniform float u_time;
     </p>
     </div>
 
+    <div class="project" id ="project3">
+    <!-- <img src="images/tactile.jpeg" alt="HTML5 Icon" class= "projImage pLeft"> -->
 
+    <p class = "projText pRight">
+        <a href = "#" class = projLink id = "projectLink1"><h2>SHELLS</h2><a>
+      <!-- Tactile, an instrument that explores the relationship between what we see and hear.
+      <br>
+         <a class = "projLink" href = "https://youtu.be/tgzE8__W5Rc">Video/</a> -->
+        <!-- <a class = "projLink" href = "https://www.youtube.com/watch?time_continue=61&v=tgzE8__W5Rc">Video/</a> -->
+    </p>
+    </div>
 
-		<div class="project" id = "project3">
+		<div class="project" id = "project4">
 	  <!-- <img src="images/FLIPA.JPG" alt="HTML5 Icon" class= "projImage pRight" > -->
 	  <p class = "projText pLeft">
         <a href = "#" class = projLink id = "projectLink1"><h2>WELCOME, #</h2><a>
 	  <!-- Software for generating beer recipes using swarm intelligence. -->
 	  </p>
 	  </div>
-    <div class="project" id ="project4">
-	  <!-- <img src="images/tactile.jpeg" alt="HTML5 Icon" class= "projImage pLeft"> -->
 
-	  <p class = "projText pRight">
-        <a href = "#" class = projLink id = "projectLink1"><h2>SHELLS</h2><a>
-	  	<!-- Tactile, an instrument that explores the relationship between what we see and hear.
-      <br>
-         <a class = "projLink" href = "https://youtu.be/tgzE8__W5Rc">Video/</a> -->
-        <!-- <a class = "projLink" href = "https://www.youtube.com/watch?time_continue=61&v=tgzE8__W5Rc">Video/</a> -->
-	  </p>
-	  </div>
     	<div class="project" id ="project5">
    <!-- <img src="images/reactionDiffusion.jpeg" alt="HTML5 Icon" class= "projImage pRight"> -->
    <p class = "projText pLeft">

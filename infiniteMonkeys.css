@@ -172,7 +172,8 @@ h1 {
 	/* font-family: 'Open Sans', sans-serif; */
  	/* font-family: 'Roboto', sans-serif; */
 	margin-top:0;
-    padding-top:0;
+  padding-top:0;
+	font-size: 2em;
 }
 
 h2{
@@ -404,17 +405,17 @@ height: 0px;
 	}
 	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; } */
 	.left{
-		 height: 55vh;
+		 height: 50vh;
 
-		width: 85%;
+		width: 100%;
 		/*display: block;
 			margin: 2.5%; */
 			position: static;
 			overflow: scroll;
 	}
 	.right{
-		height: 35vh;
-		width: 85%;
+		height: 50vh;
+		width: 100%;
 		overflow: scroll;
 			/* position: absolute; */
 			left: 0%;
@@ -430,7 +431,7 @@ height: 0px;
 
 
 	.project{
-		width:95%;
+		width:100%;
 
 		/* height: auto; */
 		/* overflow:auto */

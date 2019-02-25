@@ -115,16 +115,14 @@ overflow:hidden;
  }
 
 .left{
-	float: left;
 	/*display: table;*/
 	margin: 0% 0% 0% 0%;
 	padding: 0%;
 	left: 0;
 	right: 0;
-	/* width: 50%; */
-	max-width: 625px;
+	width: 50%;
 	height: 100vh;
-	/* position: fixed; */
+	position: fixed;
 	/*border-right: 2px solid;*/
   /* background-color:#F4F7F5; */
 	background-color:#FFFFFF00 ;
@@ -142,7 +140,6 @@ overflow:hidden;
 	/* left:50%; */
 	/* position: fixed; */
 	width: 50%;
-	max-width: 625px;
 	height: 100vh;
 	/* border: 5px solid ; */
 		/* padding-left:  2.5%; */

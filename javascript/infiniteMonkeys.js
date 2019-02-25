@@ -125,7 +125,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("Experimental software developed to explore emergent properties of branching systems. Visually complex and diverse structural bodies were generated using the same set of rules, small changes to the input dataset would often create dramatic changes, shifting between seemingly organic and industrial. <br><br> ");
+    $("#bio").html("Experimental software developed to explore emergent properties of branching systems. Visually complex and diverse structural bodies were generated using the same set of rules, small alterations to the input dataset would often create dramatic changes, shifting between seemingly organic and industrial. <br><br> ");
   // console.log(  $("#mainImg ").children('img').html() );
     $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
     $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
@@ -140,7 +140,7 @@ $(document).ready(function() {
     showLinks(1);
 
     $("#title").html($blah);
-    $("#bio").html("Allowing computational agent to directly access my human body hardware.<br> ADDA is a multimodal performance that uses embodied technologies and muscle stimulation hardware. A pair of sensory gloves track the movement of a performer's hands along with the relative position of their fingers, using machine learning techniques this data can the be used to detect different types of motion and gestures expressed. When used in conjunction, the performer is able to control the sound output. Muscle stimulation hardware, controlled by a computational agent is able to override performers intent, exposing tension between human and artificial performers.<br> <br>");
+    $("#bio").html("Allowing computational agent to directly access my human body hardware.<br> ADDA is a multimodal performance that uses embodied technologies and muscle stimulation hardware. A pair of sensory gloves track the movement of a performer's hands along with the relative position of their fingers, using machine learning techniques this data can the be used to detect different types of motion and gestures expressed, allowing performer to control the sound output. Muscle stimulation hardware, controlled by a computational agent is able to override performers intent, exposing tension between human and artificial performers.<br> <br>");
 
 
     $("#bioLink1").attr('href', 'https://www.youtube.com/watch?time_continue=265&v=gJbEyfUsk0o');
@@ -171,7 +171,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("A plain black curtain in the background with six laptops lined up across the window. There are some white footprints sprayed onto a pressure pad, encouraging people to stand in front of the window. When you stand there, the number counts your presence and participation, counting up by one whole digit. You’ll be greeted by a voice which welcomes you by your number which identifies you in the total. As people go up to inspect the window, the number on laptops will count upwards, recording how many people have stood outside it. <br><br>");
+    $("#bio").html("A plain black curtain in the background with six laptops lined up across the window. There are some white footprints sprayed onto a pressure pad, encouraging people to stand in front of the window. When you stand there, the number counts your presence and participation, counting up by one whole digit. You’ll be greeted by a voice which welcomes you by your number which identifies you in the total. As people go up to inspect the window, the number on laptops will count upwards, recording how many people have stood outside it. <br>Public installation for W+K London. \"Welcome, #\". Six laptops on display, showing a single number. Custom built viewer presence sensor. <br><br>");
 
 
     $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
@@ -252,6 +252,20 @@ $(document).ready(function() {
     $("#mainImg").html('<img src="images/spiral2.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
+  var setProject9 = function($blah) {
+    showOneImg();
+    showExit();
+    hideLinks();
+
+    $("#title").html($blah);
+    $("#bio").html("Two artworks produced in collaboration with MH Sarkis. A large array of capacitive touch sensors were embedded in to the tufting to create a 2D touch interface, which was used to actuate t-SNE clustered bank of sounds, extracted from Sarkis vocal recordings. Work was exhibited during ‘Crossings: Sarkis X Vytas’ duo show in New Cross, ‘Deptford X: Gold X’ and Space gallery. <br><br> ");
+  // console.log(  $("#mainImg ").children('img').html() );
+    $("#mainImg").html('<img src="images/touching.jpeg" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
+    // $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
+    // $("#img3").html('<img src="images/rend3.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
+    // $("#img4").html('<img src="images/rend4.png" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
+
+  };
   var setTitle = function($blah) {
 
     showExit();
@@ -267,8 +281,8 @@ $(document).ready(function() {
   var showHome = function() {
 
 
-    $("#title").html("INFINTE MONKEYS");
-    $("#bio").html(" Three of the Infinite Monkeys are Vytautas Niedvaras, Dimitris Kyriakoudis, and Edmund Oetgen. We have evolved to generate and play with numbers, a practice also known as computational arts. Our paths have crossed with visual and sound art, generative music, new performance interfaces, interactive installations, textiles, and others. Our work is an exploration of technology and its influence over social, temporal, and spatial boundaries and experiences.  <br><br> Shown here a sample of some of our favourite work and selected experiments   <br><br> Contact us at   <a href = 'mailto:lnfinitemonkeys@tuta.io' id = 'email'> lnfinitemonkeys@tuta.io</a>");
+    $("#title").html("INFINITE MONKEYS");
+    $("#bio").html(" Three of the Infinite Monkeys are Vytautas Niedvaras, Dimitris Kyriakoudis, and Edmund Oetgen. We have evolved to generate and play with numbers, a practice also known as computational arts. Our paths have crossed with visual and sound art, generative music, new performance interfaces, interactive installations, textiles, and others. Our work is an exploration of technology and its influence over social, temporal, and spatial boundaries and experiences.  <br><br> Shown here are some of our favourite work and experiments.  <br><br> Contact us at   <a href = 'mailto:lnfinitemonkeys@tuta.io' id = 'email'> lnfinitemonkeys@tuta.io</a>");
 
     hideImg();
     hideLinks();
@@ -288,6 +302,7 @@ $(document).ready(function() {
       $('#project6').click(function(){ setProject6("AUDIOVISUAL EXPERIMENTS"); return false; });
       $('#project7').click(function(){ setProject7("D.W.A.I.N."); return false; });
       $('#project8').click(function(){ setProject8("multipleAgents: SWARM CREATIVITY"); return false; });
+      $('#project9').click(function(){ setProject9("TOUCHING ALTERITY (A LATENT ANATOMY) Sarkis x Vytas"); return false; });
       $('#mainImg').click(function(){  modal("#actImg"); return false; });
       $('#img2').click(function(){     modal("#actImg2"); return false; });
       $('#img3').click(function(){  modal("#actImg3"); return false; });

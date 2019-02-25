@@ -5,14 +5,36 @@ $(document).ready(function() {
     $("#img2").hide();
     $("#img3").hide();
     $("#img4").hide();
+    $("#img5").hide();
+    $("#img6").hide();
+  };
+  var showImgVar = function($num) {
+
+    if($num==5){
+    $("#mainImg").show();
+    $("#img2").show();
+    $("#img3").show();
+    $("#img4").show();
+    $("#img5").show();
+    $("#img6").hide();
+  }  else if($num==6){
+    $("#mainImg").show();
+    $("#img2").show();
+    $("#img3").show();
+    $("#img4").show();
+    $("#img5").show();
+    $("#img6").show();
+  }
+
 
   };
-
   var showOneImg = function() {
     $("#mainImg").show();
     $("#img2").hide();
     $("#img3").hide();
     $("#img4").hide();
+    $("#img5").hide();
+    $("#img6").hide();
 
   };
   var showTwoImg = function() {
@@ -20,6 +42,8 @@ $(document).ready(function() {
     $("#img2").show();
     $("#img3").hide();
     $("#img4").hide();
+    $("#img5").hide();
+    $("#img6").hide();
 
   };
 
@@ -28,6 +52,8 @@ $(document).ready(function() {
     $("#img2").show();
     $("#img3").show();
     $("#img4").hide();
+    $("#img5").hide();
+    $("#img6").hide();
 
   };
   var showFourImg = function() {
@@ -35,6 +61,8 @@ $(document).ready(function() {
     $("#img2").show();
     $("#img3").show();
     $("#img4").show();
+    $("#img5").hide();
+    $("#img6").hide();
 
   };
   var showLinks = function($test){
@@ -155,7 +183,7 @@ $(document).ready(function() {
       showLinks(2);
 
     $("#title").html($blah);
-    $("#bio").html("TimeLines is an extremely powerful, versatile, and customizable modular synth and sequencer in the form of a live coding language. <br> <br>It is based on the idea that music is a function of time. This simply means that, ultimately, music is what emerges as time flows forwards, bringing about all changes in sound that we perceive as melodies, rhythms, chord progressions etc. In other words, if a painting is experienced by looking along the space of a canvas, then a piece of music is experienced by listening to it through time, from its beginning till the end. TimeLines builds on that concept by forming all musical structure as functions of explicit time.<br> <br> ");
+    $("#bio").html("TimeLines is a free and open-source instrument and programming language. It is used for composing and performing music, on stage in front of an audience, in a practice known as live coding. It provides a simple, yet elegant and versatile, framework for expressing musical ideas by combining the disciplines of computer programming and mathematics. <br> <br> TimeLines conceives of music as a function of time. In other words, it represents a whole piece of music as the result of letting time flow through a series of mathematical equations. By manipulating and adding to those equations in real time, one can alter the flow of time, using it to drive the music forward.<br> <br>TimeLines is in active development and has been used to perform live in festivals and conferences.<br><br> ");
 
     $("#mainImg").html('<img src="images/timelinesLive.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
 
@@ -169,19 +197,26 @@ $(document).ready(function() {
   };
 
   var setProject6 = function($blah) {
-    showFourImg();
+    showImgVar(6);
     showExit();
-      hideLinks();
+      showLinks(1);
 
     $("#title").html($blah);
-    $("#bio").html("A selection of experiments on proceduraly generated visuals <br><br> ");
+    $("#bio").html("A hand-picked selection of procedurally-generated audiovisual experiments. <br><br><h3> Pol&yacute;morphes</h3> <br><br><p class ='bio'>An attempt at digital sculpting using machine learning and a piece of paper. </p>");
 
-    $("#mainImg").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
+    $("#bioLink1").attr('href', 'https://infinitemonkeyssite.wordpress.com/2018/01/08/polymorphes/');
+    $("#bioLink1").html('MORE INFORMATION');
+
+    $("#mainImg").html(' <img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
     // $("#img3Text").html("thisis some text");
 
-    $("#img4").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg4">');
+    $("#img4").html('<br><h3> Domain: Warped</h3><br><br><p class ="bio" <p>Three studies in real-time domain warping.</p> <img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg4">');
+    $("#img5").html(' <img src="images/dimiShaders/pinWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg5">');
+    $("#img6").html(' <img src="images/dimiShaders/sphereWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg6">');
+
+
     $("#img2").html('<img src="images/dimiShaders/dimGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg2">');
-    $("#img3").html('<br> <p>Using ray marching techniques to generate evolving graphics in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg3"> ');
+    $("#img3").html('<br><h3> Dancing Slime</h3><br><br><p class ="bio" <p>Using ray marching techniques to create a pair of geltanous dancers in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg3"> ');
 
 
   };
@@ -192,7 +227,7 @@ $(document).ready(function() {
     showLinks(2);
 
     $("#title").html($blah);
-    $("#bio").html("An intelligent drum machine. Machine learning techniques used to create create arbitrary mappings between knobs and various synthesis parameters. A performer can then use these knobs to explore the sound space in real time, allowing for more expressive interactions than those offered by traditional electronic instruments ");
+    $("#bio").html("An intelligent drum machine. Machine learning techniques used to create create arbitrary mappings between knobs and various synthesis parameters. A performer can then use these knobs to explore the sound space in real time, allowing for more expressive interactions than those offered by traditional electronic instruments<br><br> ");
 
     $("#bioLink1").attr('href', 'https://soundcloud.com/oetgen/gabber-jam?in=oetgen/sets/dwain-demos');
     $("#bioLink1").html('AUDIO');
@@ -201,6 +236,20 @@ $(document).ready(function() {
     $("#bioLink2").html('VIDEO');
 
     $("#mainImg").html('<img src="images/dwain2.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+  };
+
+  var setProject8 = function($blah) {
+    showOneImg();
+    showExit();
+    showLinks(1);
+
+    $("#title").html($blah);
+    $("#bio").html("Experiments in teaching autonomous swarms to be creative. Used for drawing graphics and for a multi-channel sound installation.<br><br> ");
+
+    $("#bioLink1").attr('href', 'https://infinitemonkeyssite.wordpress.com/2017/11/30/multiple-agents-swarm-creativity/');
+    $("#bioLink1").html('MORE INFORMATION');
+
+    $("#mainImg").html('<img src="images/spiral2.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
   var setTitle = function($blah) {
@@ -219,7 +268,7 @@ $(document).ready(function() {
 
 
     $("#title").html("INFINTE MONKEYS");
-    $("#bio").html(" Infinite Monkeys is Vytautas Niedvaras, Dimitris Kyriakoudis and Edmund Oetgen. Their works are an exploration  of technology's influence over social, temporal and spatial interactions  <br><br> Shown here a sample of some of our favourite work and selected experiments   <br><br> Contact us at   <a href = 'mailto:lnfinitemonkeys@tuta.io' id = 'email'> lnfinitemonkeys@tuta.io</a>");
+    $("#bio").html(" Three of the Infinite Monkeys are Vytautas Niedvaras, Dimitris Kyriakoudis, and Edmund Oetgen. We have evolved to generate and play with numbers, a practice also known as computational arts. Our paths have crossed with visual and sound art, generative music, new performance interfaces, interactive installations, textiles, and others. Our work is an exploration of technology and its influence over social, temporal, and spatial boundaries and experiences.  <br><br> Shown here a sample of some of our favourite work and selected experiments   <br><br> Contact us at   <a href = 'mailto:lnfinitemonkeys@tuta.io' id = 'email'> lnfinitemonkeys@tuta.io</a>");
 
     hideImg();
     hideLinks();
@@ -238,6 +287,7 @@ $(document).ready(function() {
       $('#project5').click(function(){ setProject5("TIMELINES"); return false; });
       $('#project6').click(function(){ setProject6("AUDIOVISUAL EXPERIMENTS"); return false; });
       $('#project7').click(function(){ setProject7("D.W.A.I.N."); return false; });
+      $('#project8').click(function(){ setProject8("multipleAgents: SWARM CREATIVITY"); return false; });
       $('#mainImg').click(function(){  modal("#actImg"); return false; });
       $('#img2').click(function(){     modal("#actImg2"); return false; });
       $('#img3').click(function(){  modal("#actImg3"); return false; });

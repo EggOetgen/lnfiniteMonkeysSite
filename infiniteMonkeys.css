@@ -208,6 +208,7 @@ h1 {
 	margin-top:0;
   padding-top:0;
 	font-size: 2em;
+		background-color: #F5F400D9;
 }
 
 h2{
@@ -219,6 +220,17 @@ h2{
 			float: right ;
 }
 
+h3{
+
+	/* font-size: 1em;
+	/* background-color: red; */
+			/* padding-left: 0%; */
+			/* display: inline-block; */
+			float: right ;
+				background-color: #F5F400D9;
+				margin-top: 0%;
+				margin-bottom: 0%;
+}
 
 
 mark{
@@ -388,6 +400,11 @@ a:active {
 
 #project7	  {
 	background-image: url("images/dwainC.png");
+
+}
+
+#project8	  {
+	background-image: url("images/spiral.jpg");
 
 }
 

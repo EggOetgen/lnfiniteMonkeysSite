@@ -109,6 +109,10 @@ z-index:-1;
 overflow:hidden;
 }
 
+.element::-webkit-scrollbar {
+	width: 0 !important
+	-ms-overflow-style: none;
+ }
 
 .left{
 	/*display: table;*/
@@ -247,6 +251,7 @@ a.projLink:visited {
     color: #3C594E;
 
 }
+
 #bioLink2{
 	float: left;
 }

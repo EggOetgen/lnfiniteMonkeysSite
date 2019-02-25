@@ -258,7 +258,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("Two artworks produced in collaboration with MH Sarkis. A large array of capacitive touch sensors were embedded in to the tufting to create a 2D touch interface, which was used to actuate t-SNE clustered bank of sounds, extracted from Sarkis vocal recordings. Work was exhibited during \‘Crossings: Sarkis X Vytas\’ duo show in New Cross, \‘Deptford X: Gold X\’ and Space gallery. <br><br> ");
+    $("#bio").html("Two artworks produced in collaboration with MH Sarkis. A large array of capacitive touch sensors were embedded in to the tufting to create a 2D touch interface, which was used to actuate t-SNE clustered bank of sounds, extracted from Sarkis vocal recordings. Work was exhibited during \'Crossings: Sarkis X Vytas\' duo show in New Cross, \'Deptford X: Gold X\' and Space gallery. <br><br> ");
   // console.log(  $("#mainImg ").children('img').html() );
     $("#mainImg").html('<img src="images/touching.jpeg" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
     // $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');

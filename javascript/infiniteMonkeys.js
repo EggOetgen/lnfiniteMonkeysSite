@@ -125,7 +125,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+    $("#bio").html("Experimental software developed to explore emergent properties of branching systems. Visually complex and diverse structural bodies were generated using the same set of rules, small changes to the input dataset would often create dramatic changes, shifting between seemingly organic and industrial. <br><br> ");
   // console.log(  $("#mainImg ").children('img').html() );
     $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
     $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
@@ -140,7 +140,7 @@ $(document).ready(function() {
     showLinks(1);
 
     $("#title").html($blah);
-    $("#bio").html("ADDA is a musical performance that uses embodied technologies and muscle stimulation hardware. A pair of sensory gloves track the movement of a performer\'s hands along with the relative position of their fingers,  this data can the be used to detect different types of motion and gestures expressed. When used in conjunction, the performer is able to control the sound output. There is also a TENS muscle stimulator which will override the control of the performer when current is imposed. <br> <br>");
+    $("#bio").html("Allowing computational agent to directly access my human body hardware.<br> ADDA is a multimodal performance that uses embodied technologies and muscle stimulation hardware. A pair of sensory gloves track the movement of a performer's hands along with the relative position of their fingers, using machine learning techniques this data can the be used to detect different types of motion and gestures expressed. When used in conjunction, the performer is able to control the sound output. Muscle stimulation hardware, controlled by a computational agent is able to override performers intent, exposing tension between human and artificial performers.<br> <br>");
 
 
     $("#bioLink1").attr('href', 'https://www.youtube.com/watch?time_continue=265&v=gJbEyfUsk0o');
@@ -171,7 +171,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+    $("#bio").html("Public installation for W+K London. \"Welcome, #\". Six laptops on display, showing a single number.  <br><br> ");
 
 
     $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');

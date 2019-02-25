@@ -14,8 +14,7 @@ body{
 /* scrollbar-width:none; */
 background-color:#8EEEFF00;
 		    /* font-family: 'Muli', sans-serif; */
-				width: 0 !important
-				-ms-overflow-style: none;
+
 
 		    font-family: 'Hind Siliguri', sans-serif; */
 
@@ -110,8 +109,9 @@ z-index:-1;
 overflow:hidden;
 }
 
-.element::-webkit-scrollbar {
-
+::-webkit-scrollbar { 
+	width: 0 !important
+	-ms-overflow-style: none;
  }
 
 .left{
@@ -129,8 +129,6 @@ overflow:hidden;
 	/* border: 5px solid ; */
 	overflow: scroll ;
 	display: inline;
-	width: 0 !important
-	-ms-overflow-style: none;
 }
 
 /* ::-webkit-scrollbar {
@@ -150,15 +148,11 @@ overflow:hidden;
 /* padding-bottom: 2%; */
 overflow: scroll;
 display: inline-block;
-width: 0 !important
--ms-overflow-style: none;
 	/*border-left: 2px solid black;*/
 }
 .rightScroll{
 
 	overflow: scroll;
-	width: 0 !important
-	-ms-overflow-style: none;
 /* position: fixed; */
 	/*border-left: 2px solid black;*/
 }

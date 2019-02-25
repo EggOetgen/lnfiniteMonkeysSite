@@ -171,7 +171,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("A plain black curtain in the background with six laptops lined up across the window. There are some white footprints sprayed onto a pressure pad, encouraging people to stand in front of the window. When you stand there, the number counts your presence and participation, counting up by one whole digit. You’ll be greeted by a voice which welcomes you by your number which identifies you in the total. As people go up to inspect the window, the number on laptops will count upwards, recording how many people have stood outside it. <br>Public installation for W+K London. \"Welcome, #\". Six laptops on display, showing a single number. Custom built viewer presence sensor. <br><br>");
+    $("#bio").html("A plain black curtain in the background with six laptops lined up across the window. There are some white footprints sprayed onto a pressure pad, encouraging people to stand in front of the window. When you stand there, the number counts your presence and participation, counting up by one whole digit. You\'ll be greeted by a voice which welcomes you by your number which identifies you in the total. As people go up to inspect the window, the number on laptops will count upwards, recording how many people have stood outside it. <br>Public installation for W+K London. \"Welcome, #\". Six laptops on display, showing a single number. Custom built viewer presence sensor. <br><br>");
 
 
     $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
@@ -258,7 +258,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("Two artworks produced in collaboration with MH Sarkis. A large array of capacitive touch sensors were embedded in to the tufting to create a 2D touch interface, which was used to actuate t-SNE clustered bank of sounds, extracted from Sarkis vocal recordings. Work was exhibited during ‘Crossings: Sarkis X Vytas’ duo show in New Cross, ‘Deptford X: Gold X’ and Space gallery. <br><br> ");
+    $("#bio").html("Two artworks produced in collaboration with MH Sarkis. A large array of capacitive touch sensors were embedded in to the tufting to create a 2D touch interface, which was used to actuate t-SNE clustered bank of sounds, extracted from Sarkis vocal recordings. Work was exhibited during \‘Crossings: Sarkis X Vytas\’ duo show in New Cross, \‘Deptford X: Gold X\’ and Space gallery. <br><br> ");
   // console.log(  $("#mainImg ").children('img').html() );
     $("#mainImg").html('<img src="images/touching.jpeg" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
     // $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');

@@ -129,7 +129,7 @@ $(document).ready(function() {
         hideLinks();
 
       $("#title").html($blah);
-      $("#bio").html("An exploration of paratmetric design, user interaction and machine learning. <br> <br> A seashell is graphically generated in real time, it's shape dictated by a mathematical formula. Facial recognition software passes information into a neural network which in turn send data into the formula, allowing the user to control the form of the shell by changing their expression. These shells can then be exported given physical form using a 3D printer <br> <br>");
+      $("#bio").html("An exploration of parametric design, user interaction and machine learning. <br> <br> A seashell is graphically generated in real time, it's shape dictated by a mathematical formula. Facial recognition software passes information into a neural network which in turn send data into the formula, allowing the user to control the form of the shell by changing their expression. These shells can then be exported given physical form using a 3D printer <br> <br>");
 
       $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
       $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
@@ -157,7 +157,7 @@ $(document).ready(function() {
     $("#title").html($blah);
     $("#bio").html("TimeLines is an extremely powerful, versatile, and customizable modular synth and sequencer in the form of a live coding language. <br> <br>It is based on the idea that music is a function of time. This simply means that, ultimately, music is what emerges as time flows forwards, bringing about all changes in sound that we perceive as melodies, rhythms, chord progressions etc. In other words, if a painting is experienced by looking along the space of a canvas, then a piece of music is experienced by listening to it through time, from its beginning till the end. TimeLines builds on that concept by forming all musical structure as functions of explicit time.<br> <br> ");
 
-    $("#mainImg").html('<img src="images/timeLines.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#mainImg").html('<img src="images/timelinesLive.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
 
 
         $("#bioLink1").attr('href', 'https://github.com/lnfiniteMonkeys/TimeLines');
@@ -179,9 +179,9 @@ $(document).ready(function() {
     $("#mainImg").html('<img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
     // $("#img3Text").html("thisis some text");
 
-    $("#img3").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg3">');
-    $("#img4").html('<img src="images/dimiShaders/spiral.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg4">');
-    $("#img2").html('<br> <p>Using ray marching techniques to generate evolving graphics in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg2"> ');
+    $("#img4").html('<img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg4">');
+    $("#img2").html('<img src="images/dimiShaders/dimGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg2">');
+    $("#img3").html('<br> <p>Using ray marching techniques to generate evolving graphics in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg3"> ');
 
 
   };

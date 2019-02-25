@@ -171,7 +171,7 @@ $(document).ready(function() {
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("Public installation for W+K London. \"Welcome, #\". Six laptops on display, showing a single number.  <br><br> ");
+    $("#bio").html("A plain black curtain in the background with six laptops lined up across the window. There are some white footprints sprayed onto a pressure pad, encouraging people to stand in front of the window. When you stand there, the number counts your presence and participation, counting up by one whole digit. You’ll be greeted by a voice which welcomes you by your number which identifies you in the total. As people go up to inspect the window, the number on laptops will count upwards, recording how many people have stood outside it. <br><br>");
 
 
     $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');

@@ -219,7 +219,7 @@ $(document).ready(function() {
 
 
     $("#title").html("INFINTE MONKEYS");
-    $("#bio").html(" Infinite Monkeys is Vytautas Niedvaras, Dimitris Kyriakoudis and Edmund Oetgen. Their works are an exploration  of technology's influence over social, temporal and spatial interactions  <br><br> Shown here a sample of some of our favourite work and selected experiments   <br><br> Contact us at   <a href = 'mailto: EMAIL@EMAIL.COM' id = 'email'> EMAIL@EMAIL.COM</a>");
+    $("#bio").html(" Infinite Monkeys is Vytautas Niedvaras, Dimitris Kyriakoudis and Edmund Oetgen. Their works are an exploration  of technology's influence over social, temporal and spatial interactions  <br><br> Shown here a sample of some of our favourite work and selected experiments   <br><br> Contact us at   <a href = 'mailto: lnfinitemonkeys@tuta.io id = 'email'> lnfinitemonkeys@tuta.io</a>");
 
     hideImg();
     hideLinks();
@@ -232,7 +232,7 @@ $(document).ready(function() {
 
       $('#exit').click(function(){ showHome(); return false; });
       $('#project1').click(function(){ setProject1("FRACTURES"); return false; });
-      $('#project2').click(function(){ setProject2("ADD A"); return false; });
+      $('#project2').click(function(){ setProject2("ADDA"); return false; });
       $('#project3').click(function(){ setProject3("SHELLS"); return false; });
       $('#project4').click(function(){ setProject4("WELCOME, #"); return false; });
       $('#project5').click(function(){ setProject5("TIMELINES"); return false; });

@@ -120,7 +120,7 @@ $(document).ready(function() {
   };
 
   var setProject1 = function($blah) {
-    showFourImg();
+    showImgVar(5);
     showExit();
     hideLinks();
 
@@ -129,8 +129,10 @@ $(document).ready(function() {
   // console.log(  $("#mainImg ").children('img').html() );
     $("#mainImg").html('<img src="images/render.png" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
     $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
-    $("#img3").html('<img src="images/rend3.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
-    $("#img4").html('<img src="images/rend4.png" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
+    $("#img4").html('<img src="images/rend3.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
+    $("#img5").html('<img src="images/rend4.png" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
+    $("#img3").html('<img src="images/rend5.png" alt="Project Image" class= "mainBoxImg"  id ="actImg5">');
+
 
   };
 
@@ -152,71 +154,68 @@ $(document).ready(function() {
 
 
     var setProject3 = function($blah) {
-      showFourImg();
+
+      showOneImg();
       showExit();
-        hideLinks();
+      hideLinks();
 
       $("#title").html($blah);
-      $("#bio").html("An exploration of parametric design, user interaction and machine learning. <br> <br> A seashell is graphically generated in real time, it's shape dictated by a mathematical formula. Facial recognition software passes information into a neural network which in turn send data into the formula, allowing the user to control the form of the shell by changing their expression. These shells can then be exported given physical form using a 3D printer <br> <br>");
+      $("#bio").html("Two artworks produced in collaboration with MH Sarkis. A large array of capacitive touch sensors were embedded in to the tufting to create a 2D touch interface, which was used to actuate t-SNE clustered bank of sounds, extracted from Sarkis vocal recordings. Work was exhibited during \'Crossings: Sarkis X Vytas\' duo show in New Cross, \'Deptford X: Gold X\' and Space gallery. <br><br> ");
+    // console.log(  $("#mainImg ").children('img').html() );
+      $("#mainImg").html('<img src="images/touching.jpeg" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
+      // $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
+      // $("#img3").html('<img src="images/rend3.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
+      // $("#img4").html('<img src="images/rend4.png" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
 
-      $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
-      $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
-      $("#img3").html('<img src="images/shell1.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
-      $("#img4").html('<img src="images/shell4.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
+
     };
 
-  var setProject4 = function($blah) {
+
+      var setProject4 = function($blah) {
+        showOneImg();
+        showExit();
+          showLinks(2);
+
+        $("#title").html($blah);
+        $("#bio").html("TimeLines is a free and open-source instrument and programming language. It is used for composing and performing music, on stage in front of an audience, in a practice known as live coding. It provides a simple, yet elegant and versatile, framework for expressing musical ideas by combining the disciplines of computer programming and mathematics. <br> <br> TimeLines conceives of music as a function of time. In other words, it represents a whole piece of music as the result of letting time flow through a series of mathematical equations. By manipulating and adding to those equations in real time, one can alter the flow of time, using it to drive the music forward.<br> <br>TimeLines is in active development and has been used to perform live in festivals and conferences.<br><br> ");
+
+        $("#mainImg").html('<img src="images/timelinesLive.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+
+
+            $("#bioLink1").attr('href', 'https://github.com/lnfiniteMonkeys/TimeLines');
+            $("#bioLink1").html('GITHUB');
+
+            $("#bioLink2").attr('href', 'https://www.youtube.com/channel/UCqypIKZibRqhOz8QPFgwg1Q');
+            $("#bioLink2").html('YOUTUBE');
+
+      };
+
+  var setProject5 = function($blah) {
     showOneImg();
     showExit();
     hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("A plain black curtain in the background with six laptops lined up across the window. There are some white footprints sprayed onto a pressure pad, encouraging people to stand in front of the window. When you stand there, the number counts your presence and participation, counting up by one whole digit. You\'ll be greeted by a voice which welcomes you by your number which identifies you in the total. As people go up to inspect the window, the number on laptops will count upwards, recording how many people have stood outside it. <br>Public installation for W+K London. \"Welcome, #\". Six laptops on display, showing a single number. Custom built viewer presence sensor. <br><br>");
+    $("#bio").html("A plain black curtain in the background with six laptops lined up across the window. There are some white footprints sprayed onto a pressure pad, encouraging people to stand in front of the window. When you stand there, the number counts your presence and participation, counting up by one whole digit. You\'ll be greeted by a voice which welcomes you by your number which identifies you in the total. As people go up to inspect the window, the number on laptops will count upwards, recording how many people have stood outside it. <br> <br>Public installation for W+K London. \"Welcome, #\". Six laptops on display, showing a single number. Custom built viewer presence sensor. <br><br>");
 
 
-    $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+    $("#mainImg").html('<img src="images/window.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
-  var setProject5 = function($blah) {
-    showOneImg();
-    showExit();
-      showLinks(2);
-
-    $("#title").html($blah);
-    $("#bio").html("TimeLines is a free and open-source instrument and programming language. It is used for composing and performing music, on stage in front of an audience, in a practice known as live coding. It provides a simple, yet elegant and versatile, framework for expressing musical ideas by combining the disciplines of computer programming and mathematics. <br> <br> TimeLines conceives of music as a function of time. In other words, it represents a whole piece of music as the result of letting time flow through a series of mathematical equations. By manipulating and adding to those equations in real time, one can alter the flow of time, using it to drive the music forward.<br> <br>TimeLines is in active development and has been used to perform live in festivals and conferences.<br><br> ");
-
-    $("#mainImg").html('<img src="images/timelinesLive.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
-
-
-        $("#bioLink1").attr('href', 'https://github.com/lnfiniteMonkeys/TimeLines');
-        $("#bioLink1").html('GITHUB');
-
-        $("#bioLink2").attr('href', 'https://www.youtube.com/channel/UCqypIKZibRqhOz8QPFgwg1Q');
-        $("#bioLink2").html('YOUTUBE');
-
-  };
 
   var setProject6 = function($blah) {
-    showImgVar(6);
+
+    showFourImg();
     showExit();
-      showLinks(1);
+      hideLinks();
 
     $("#title").html($blah);
-    $("#bio").html("A hand-picked selection of procedurally-generated audiovisual experiments. <br><br><h3> Pol&yacute;morphes</h3> <br><br><p class ='bio'>An attempt at digital sculpting using machine learning and a piece of paper. </p>");
+    $("#bio").html("An exploration of parametric design, user interaction and machine learning. <br> <br> A seashell is graphically generated in real time, it's shape dictated by a mathematical formula. Facial recognition software passes information into a neural network which in turn send data into the formula, allowing the user to control the form of the shell by changing their expression. These shells can then be exported given physical form using a 3D printer <br> <br>");
 
-    $("#bioLink1").attr('href', 'https://infinitemonkeyssite.wordpress.com/2018/01/08/polymorphes/');
-    $("#bioLink1").html('MORE INFORMATION');
-
-    $("#mainImg").html(' <img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
-    // $("#img3Text").html("thisis some text");
-
-    $("#img4").html('<br><h3> Domain: Warped</h3><br><br><p class ="bio" <p>Three studies in real-time domain warping.</p> <img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg4">');
-    $("#img5").html(' <img src="images/dimiShaders/pinWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg5">');
-    $("#img6").html(' <img src="images/dimiShaders/sphereWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg6">');
-
-
-    $("#img2").html('<img src="images/dimiShaders/dimGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg2">');
-    $("#img3").html('<br><h3> Dancing Slime</h3><br><br><p class ="bio" <p>Using ray marching techniques to create a pair of geltanous dancers in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg3"> ');
+    $("#mainImg").html('<img src="images/shellGif.gif" alt="Project Image" class= "mainBoxImg"   id ="actImg">');
+    $("#img2").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
+    $("#img3").html('<img src="images/shell1.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
+    $("#img4").html('<img src="images/shell4.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
 
 
   };
@@ -253,29 +252,63 @@ $(document).ready(function() {
   };
 
   var setProject9 = function($blah) {
+
     showOneImg();
     showExit();
-    hideLinks();
+    showLinks(1);
+
+
+    showLinks(1);
+
+
+    $("#bioLink1").attr('href', 'http://randomquark.com/case-studies/tommy-hilfiger.html');
+    $("#bioLink1").html('MORE INFORMATION');
 
     $("#title").html($blah);
-    $("#bio").html("Two artworks produced in collaboration with MH Sarkis. A large array of capacitive touch sensors were embedded in to the tufting to create a 2D touch interface, which was used to actuate t-SNE clustered bank of sounds, extracted from Sarkis vocal recordings. Work was exhibited during \'Crossings: Sarkis X Vytas\' duo show in New Cross, \'Deptford X: Gold X\' and Space gallery. <br><br> ");
+    $("#bio").html("Interactive window display for Tommy Hilfiger. We worked with Random Quark and OMM to develop capacitive touch hardware and software for weather and vandalism proof through-glass touch interaction. <br><br>");
   // console.log(  $("#mainImg ").children('img').html() );
-    $("#mainImg").html('<img src="images/touching.jpeg" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
+    $("#mainImg").html('<img src="images/tom2.jpg" alt="Project Image" class= "mainBoxImg" id ="actImg" >');
     // $("#img2").html('<img src="images/rend2.png" alt="Project Image" class= "mainBoxImg"  id ="actImg2">');
     // $("#img3").html('<img src="images/rend3.png" alt="Project Image" class= "mainBoxImg"  id ="actImg3">');
     // $("#img4").html('<img src="images/rend4.png" alt="Project Image" class= "mainBoxImg"  id ="actImg4">');
 
   };
-  var setTitle = function($blah) {
 
+  var setProject10 = function($blah) {
+
+    showImgVar(6);
     showExit();
-
+      showLinks(1);
 
     $("#title").html($blah);
-    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+    $("#bio").html("A hand-picked selection of procedurally-generated audiovisual experiments. <br><br><h3> Pol&yacute;morphes</h3> <br><br><p class ='bio'>An attempt at digital sculpting using machine learning and a piece of paper. </p>");
 
-    $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id = "actImg" >');
+    $("#bioLink1").attr('href', 'https://infinitemonkeyssite.wordpress.com/2018/01/08/polymorphes/');
+    $("#bioLink1").html('MORE INFORMATION');
+
+    $("#mainImg").html(' <img src="images/dimiShaders/dimiShaderTransform.png" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
+    // $("#img3Text").html("thisis some text");
+
+    $("#img4").html('<br><h3> Domain: Warped</h3><br><br><p class ="bio" <p>Three studies in real-time domain warping.</p> <img src="images/dimiShaders/dimiShaderWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg4">');
+    $("#img5").html(' <img src="images/dimiShaders/pinWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg5">');
+    $("#img6").html(' <img src="images/dimiShaders/sphereWater.png" alt="Project Image" class= "mainBoxImg"   id = "actImg6">');
+
+
+    $("#img2").html('<img src="images/dimiShaders/dimGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg2">');
+    $("#img3").html('<br><h3> Dancing Slime</h3><br><br><p class ="bio" <p>Using ray marching techniques to create a pair of geltanous dancers in real time</p> <img src="images/blobGif.gif" alt="Project Image" class= "mainBoxImg"   id = "actImg3"> ');
+
+
   };
+  // var setTitle = function($blah) {
+  //
+  //   showExit();
+  //
+  //
+  //   $("#title").html($blah);
+  //   $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+  //
+  //   $("#mainImg").html('<img src="images/shell2.jpg" alt="Project Image" class= "mainBoxImg"  id = "actImg" >');
+  // };
 
 
   var showHome = function() {
@@ -296,13 +329,14 @@ $(document).ready(function() {
       $('#exit').click(function(){ showHome(); return false; });
       $('#project1').click(function(){ setProject1("FRACTURES"); return false; });
       $('#project2').click(function(){ setProject2("ADDA"); return false; });
-      $('#project3').click(function(){ setProject3("SHELLS"); return false; });
-      $('#project4').click(function(){ setProject4("WELCOME, #"); return false; });
-      $('#project5').click(function(){ setProject5("TIMELINES"); return false; });
-      $('#project6').click(function(){ setProject6("AUDIOVISUAL EXPERIMENTS"); return false; });
+      $('#project3').click(function(){ setProject3("TOUCHING ALTERITY (A LATENT ANATOMY) Sarkis x Vytas"); return false; });
+      $('#project4').click(function(){ setProject4("TIMELINES"); return false; });
+      $('#project5').click(function(){ setProject5("WELCOME, #"); return false; });
+      $('#project6').click(function(){ setProject6("SHELLS"); return false; });
       $('#project7').click(function(){ setProject7("D.W.A.I.N."); return false; });
-      $('#project8').click(function(){ setProject8("multipleAgents: SWARM CREATIVITY"); return false; });
-      $('#project9').click(function(){ setProject9("TOUCHING ALTERITY (A LATENT ANATOMY) Sarkis x Vytas"); return false; });
+      $('#project8').click(function(){ setProject8("multipleAgents: SWARM CREATIVITY."); return false; });
+      $('#project9').click(function(){ setProject9("TOMMY HILFIGER\'S REGENT STREET"); return false; });
+      $('#project10').click(function(){ setProject10("VISUAL EXPERIMENTS "); return false; });
       $('#mainImg').click(function(){  modal("#actImg"); return false; });
       $('#img2').click(function(){     modal("#actImg2"); return false; });
       $('#img3').click(function(){  modal("#actImg3"); return false; });

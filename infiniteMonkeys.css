@@ -495,7 +495,7 @@ height: 0px;
 		height: 50vh;
 		width: 100%;
 		overflow: scroll;
-			/* position: absolute; */
+			position: absolute;
 			left: 0%;
 			/* float: right; */
 			/* display: block; */

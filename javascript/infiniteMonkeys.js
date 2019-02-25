@@ -192,7 +192,7 @@ $(document).ready(function() {
     showLinks(2);
 
     $("#title").html($blah);
-    $("#bio").html("An inteligent drum machine. Machine learning techniques used to create create arbitrary mappings between knobs and various synthesis parameters. A performer can then use these knobs to explore the sound space in real time, allowing for more expressive interactions than those offered by traditional electronic instruments ");
+    $("#bio").html("An intelligent drum machine. Machine learning techniques used to create create arbitrary mappings between knobs and various synthesis parameters. A performer can then use these knobs to explore the sound space in real time, allowing for more expressive interactions than those offered by traditional electronic instruments ");
 
     $("#bioLink1").attr('href', 'https://soundcloud.com/oetgen/gabber-jam?in=oetgen/sets/dwain-demos');
     $("#bioLink1").html('AUDIO');

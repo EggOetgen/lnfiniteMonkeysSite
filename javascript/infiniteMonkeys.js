@@ -109,12 +109,16 @@ $(document).ready(function() {
   var setProject2 = function($blah) {
     showOneImg();
     showExit();
-      hideLinks();
+    showLinks(1);
 
     $("#title").html($blah);
-    $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
+    $("#bio").html("ADDA is a musical performance that uses embodied technologies and muscle stimulation hardware. A pair of sensory gloves track the movement of a performer\'s hands along with the relative position of their fingers,  this data can the be used to detect different types of motion and gestures expressed. When used in conjunction, the performer is able to control the sound output. There is also a TENS muscle stimulator which will override the control of the performer when current is imposed. <br> <br>");
 
-    $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
+
+    $("#bioLink1").attr('href', 'https://www.youtube.com/watch?time_continue=265&v=gJbEyfUsk0o');
+    $("#bioLink1").html('VIDEO');
+
+    $("#mainImg").html('<img src="images/addaGlove.jpg" alt="Project Image" class= "mainBoxImg"  id ="actImg">');
   };
 
 
@@ -136,12 +140,13 @@ $(document).ready(function() {
   var setProject4 = function($blah) {
     showOneImg();
     showExit();
-      hideLinks();
+    hideLinks();
 
     $("#title").html($blah);
     $("#bio").html("This is some example text about  " + $blah + "! <br> <br> Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. ");
 
-    $("#mainImg").html('<img src="images/addda.png" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
+
+    $("#mainImg").html('<img src="images/wondow.jpg" alt="Project Image" class= "mainBoxImg"   id = "actImg">');
   };
 
   var setProject5 = function($blah) {
@@ -217,6 +222,7 @@ $(document).ready(function() {
     $("#bio").html(" Infinite Monkeys is Vytautas Niedvaras, Dimitris Kyriakoudis and Edmund Oetgen. Their works are an exploration  of technology's influence over social, temporal and spatial interactions  <br><br> Shown here a sample of some of our favourite work and selected experiments   <br><br> Contact us at   <a href = 'mailto: EMAIL@EMAIL.COM' id = 'email'> EMAIL@EMAIL.COM</a>");
 
     hideImg();
+    hideLinks();
     hideExit();
 
 
